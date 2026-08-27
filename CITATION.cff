@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript."
+type: software
+title: "Optimized Tensor Network PTSBE"
+license: Apache-2.0
+authors:
+  - family-names: Patti
+    given-names: Taylor Lee
+    affiliation: NVIDIA
+  - family-names: Pari
+    given-names: Paavai
+    affiliation: NVIDIA
+  - family-names: Gao
+    given-names: Yang
+    affiliation: NVIDIA
+  - family-names: Haidar
+    given-names: Azzam
+    affiliation: NVIDIA
+  - family-names: Nguyen
+    given-names: Thien
+    affiliation: NVIDIA
+  - family-names: Lubowe
+    given-names: Tom
+    affiliation: NVIDIA
+  - family-names: Lowell
+    given-names: Daniel
+    affiliation: NVIDIA
+  - family-names: Khailany
+    given-names: Brucek
+    affiliation: NVIDIA
+date-released: 2026-04-09
+identifiers:
+  - type: doi
+    value: 10.48550/arXiv.2604.08467
+    description: "Associated arXiv manuscript"
+keywords:
+  - quantum computing
+  - tensor networks
+  - quantum trajectories
+  - cuTensorNet
+  - PTSBE
+preferred-citation:
+  type: article
+  title: "Accelerating Quantum Tensor Network Simulations with Unified Path Variations and Non-Degenerate Batched Sampling"
+  authors:
+    - family-names: Patti
+      given-names: Taylor Lee
+    - family-names: Pari
+      given-names: Paavai
+    - family-names: Gao
+      given-names: Yang
+    - family-names: Haidar
+      given-names: Azzam
+    - family-names: Nguyen
+      given-names: Thien
+    - family-names: Lubowe
+      given-names: Tom
+    - family-names: Lowell
+      given-names: Daniel
+    - family-names: Khailany
+      given-names: Brucek
+  year: 2026
+  doi: 10.48550/arXiv.2604.08467

@@ -1,0 +1,19 @@
+# Python cache (never commit these)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Output directories (never commit)
+misc-arch/
+scaling/jobs/output/
+
+# Log files
+*.log
+
+# Generated manual workflow artifacts
+*_output.py
+error_sets.pickle
+random_circuit.qpy
+stim_script.stim
+shot_sets/
+*_histogram.png

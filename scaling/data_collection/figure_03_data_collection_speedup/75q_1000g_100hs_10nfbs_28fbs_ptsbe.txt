@@ -1,0 +1,1215 @@
+# SANITIZED FOR PUBLIC RELEASE: internal filesystem and container-registry identifiers were replaced; container lifecycle output was removed; numerical benchmark output is unchanged.
+[internal container setup output removed]
+Creating symlinks...
+Copying project files...
+Running experiment...
+=== cuQuantum Environment Ready ===
+cuTensorNet version: 21100
+
+Setup complete!
+=== Starting Parameter Sweep ===
+Copy done, starting Python...
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+run_data_collection_1.py started
+Thu Mar 12 10:07:28 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:6B:00.0 Off |                    0 |
+| N/A   31C    P0             60W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Auto-detected 50 circuits from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g/config.json
+Capping num_circuits from 50 to 10
+Scaling script: /workspace/ptsbe/scaling/scaling_comparison_avg.py
+Working dir:    /workspace/ptsbe/scaling
+Output dir:     /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1
+Circuit dir:    /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+Num circuits:   10
+Total runs:     1 config(s) x 10 circuit(s) = 10
+
+======================================================================
+RUN 1/1 | circuit_id=0: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 0 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_0 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_0.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_0.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           0
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 0 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0113s
+[TIMING] CircuitToEinsum: 0.0563s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 199.7s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=1: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 1 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_1 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_1.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_1.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           1
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 1 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0114s
+[TIMING] CircuitToEinsum: 0.0579s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 240.9s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=2: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 2 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_2 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_2.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_2.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           2
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 2 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0111s
+[TIMING] CircuitToEinsum: 0.0577s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2170 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2190 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2210 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2230 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2244 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (6 batches): 353.5668s, total operands 0.001 GB
+  Batch 0: largest_intermediate=1073741824.0, opt_cost=2.2629061535527967e+21
+  Batch 1: largest_intermediate=1073741824.0, opt_cost=1.8539210730985153e+21
+  Batch 2: largest_intermediate=1073741824.0, opt_cost=2.245432610825972e+20
+  Batch 3: largest_intermediate=1073741824.0, opt_cost=4.3010334835993477e+18
+  Batch 4: largest_intermediate=1073741824.0, opt_cost=2.368243860493104e+16
+  Batch 5: largest_intermediate=1073741824.0, opt_cost=1697205501616128.0
+[ABORT] Batch 0 opt_cost (2.26e+21) exceeds threshold (1.00e+15)
+[ABORT] Skipping this configuration to avoid blocking other experiments
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 357.8s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=3: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 3 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_3 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_3.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_3.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           3
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 3 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0107s
+[TIMING] CircuitToEinsum: 0.0585s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[internal container setup output removed]
+Creating symlinks...
+Copying project files...
+Running experiment...
+=== cuQuantum Environment Ready ===
+cuTensorNet version: 21100
+
+Setup complete!
+=== Starting Parameter Sweep ===
+Copy done, starting Python...
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+run_data_collection_1.py started
+Thu Mar 12 19:05:27 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:6B:00.0 Off |                    0 |
+| N/A   33C    P0             64W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Auto-detected 50 circuits from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g/config.json
+Capping num_circuits from 50 to 10
+Scaling script: /workspace/ptsbe/scaling/scaling_comparison_avg.py
+Working dir:    /workspace/ptsbe/scaling
+Output dir:     /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1
+Circuit dir:    /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+Num circuits:   10
+Total runs:     1 config(s) x 10 circuit(s) = 10
+
+======================================================================
+RUN 1/1 | circuit_id=0: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 0 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_0 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_0.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_0.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           0
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 0 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0110s
+[TIMING] CircuitToEinsum: 0.0589s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 199.4s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=1: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 1 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_1 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_1.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_1.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           1
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 1 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0112s
+[TIMING] CircuitToEinsum: 0.0593s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 249.2s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=2: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 2 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_2 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_2.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_2.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           2
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 2 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0111s
+[TIMING] CircuitToEinsum: 0.0570s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2170 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2190 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2210 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2230 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2244 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (6 batches): 354.0772s, total operands 0.001 GB
+  Batch 0: largest_intermediate=2147483648.0, opt_cost=1.4812205432661837e+21
+  Batch 1: largest_intermediate=1073741824.0, opt_cost=1.7494814673516458e+21
+  Batch 2: largest_intermediate=2147483648.0, opt_cost=2.0198182404977014e+20
+  Batch 3: largest_intermediate=1073741824.0, opt_cost=3.3072045004601426e+18
+  Batch 4: largest_intermediate=1073741824.0, opt_cost=1.1468480404455296e+16
+  Batch 5: largest_intermediate=1073741824.0, opt_cost=9808907711315968.0
+[ABORT] Batch 0 opt_cost (1.48e+21) exceeds threshold (1.00e+15)
+[ABORT] Skipping this configuration to avoid blocking other experiments
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 358.3s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=3: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 3 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_3 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_3.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_3.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           3
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 3 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0109s
+[TIMING] CircuitToEinsum: 0.0584s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 187.2s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=4: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 4 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_4 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_4.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_4.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           4
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 4 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0110s
+[TIMING] CircuitToEinsum: 0.0587s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 210.6s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=5: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 5 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_5 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_5.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_5.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           5
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 5 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0107s
+[TIMING] CircuitToEinsum: 0.0566s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 205.2s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=6: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 6 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_6 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_6.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_6.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           6
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 6 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0110s
+[TIMING] CircuitToEinsum: 0.0579s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 193.7s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=7: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 7 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_7 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_7.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_7.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           7
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 7 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0109s
+[TIMING] CircuitToEinsum: 0.0576s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2170 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2190 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2210 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2230 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2244 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (6 batches): 608.5744s, total operands 0.001 GB
+  Batch 0: largest_intermediate=1073741824.0, opt_cost=5.301325430370436e+24
+  Batch 1: largest_intermediate=1073741824.0, opt_cost=2.8982410708865336e+24
+  Batch 2: largest_intermediate=1073741824.0, opt_cost=2.138067096772923e+22
+  Batch 3: largest_intermediate=1073741824.0, opt_cost=1.0768822575087739e+22
+  Batch 4: largest_intermediate=2147483648.0, opt_cost=1.3776393989802426e+19
+  Batch 5: largest_intermediate=1073741824.0, opt_cost=3.232927448170273e+19
+[ABORT] Batch 0 opt_cost (5.30e+24) exceeds threshold (1.00e+15)
+[ABORT] Skipping this configuration to avoid blocking other experiments
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 612.9s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=8: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 8 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_8 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_8.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_8.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           8
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 8 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0106s
+[TIMING] CircuitToEinsum: 0.0588s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 213.3s (returncode=1)
+
+======================================================================
+RUN 1/1 | circuit_id=9: nqubits=75 ngates=1000 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,7,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 10 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_cudaq --nqubits 75 --ngates 1000 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,7,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g --circuit_id 9 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/work_circuit_9 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_9.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/75q_1000g/python/output_data_collection_1/run_1_circuit_9.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              75
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            65 -> 2^65 = 36893488147419103232 combinations
+  nnoise_samples:       10
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  circuit_id:           9
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 9 from /workspace/ptsbe/scaling/data_collection/circuits/75q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 10 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 75, max_free: 10
+  Batches: 6, ranges: [0, 10, 20, 30, 40, 47, 75], qubits_per_batch: [10, 10, 10, 10, 7, 28]
+  Samples: 10, base_shots_per_batch: [1, 1, 1, 1, 1, 100], proportional_sampling: False
+  Minimum contractions:  60 in total for 10 samples
+  Expected contractions: 60 in total for 10 samples
+  Maximum contractions:  60 in total for 10 samples
+  .............................................................
+[TIMING] Load circuit: 0.0111s
+[TIMING] CircuitToEinsum: 0.0586s
+[INFO] Batched approach (qubitShotFlex): 6 batches, ranges=[0, 10, 20, 30, 40, 47, 75], base_shots_per_batch=[1, 1, 1, 1, 1, 100]
+  Batch 0 operands: 2150 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[ABORT] Batch 0 path optimization failed - ALL_HYPER_SAMPLES_FAILED
+[ABORT] Network too complex for available memory. Skipping configuration.
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+Traceback (most recent call last):
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 888, in <module>
+    main()
+  File "/workspace/ptsbe/scaling/scaling_comparison_avg.py", line 605, in main
+    raise ValueError("PTSBE time_contraction_loop not found (required when --include_total_time is not set).")
+ValueError: PTSBE time_contraction_loop not found (required when --include_total_time is not set).
+Completed in 233.7s (returncode=1)
+No results to summarize.
+[internal container cleanup output removed]

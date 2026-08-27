@@ -1,0 +1,1034 @@
+# SANITIZED FOR PUBLIC RELEASE: internal filesystem and container-registry identifiers were replaced; container lifecycle output was removed; numerical benchmark output is unchanged.
+[internal container setup output removed]
+Creating symlinks...
+Copying project files...
+Running experiment...
+=== cuQuantum Environment Ready ===
+cuTensorNet version: 21100
+
+Setup complete!
+=== Starting Parameter Sweep ===
+Copy done, starting Python...
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+run_data_collection_1.py started
+Thu Mar 12 17:30:50 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:45:00.0 Off |                    0 |
+| N/A   27C    P0             63W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Auto-detected 50 circuits from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g/config.json
+Capping num_circuits from 50 to 10
+Scaling script: /workspace/ptsbe/scaling/scaling_comparison_avg.py
+Working dir:    /workspace/ptsbe/scaling
+Output dir:     /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1
+Circuit dir:    /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+Num circuits:   10
+Total runs:     1 config(s) x 10 circuit(s) = 10
+
+======================================================================
+RUN 1/1 | circuit_id=0: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 0 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_0 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_0.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_0.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           0
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 0 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000408s
+  Sample time:          140.600306s
+  Total time:           140.600714s
+  Per-shot time:        140.600306s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 140.6003s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           140.6003s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_0.json[0m
+
+Completed in 149.0s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=1: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 1 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_1 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_1.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_1.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           1
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 1 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000051s
+  Sample time:          115.883379s
+  Total time:           115.883430s
+  Per-shot time:        115.883379s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 115.8834s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           115.8834s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_1.json[0m
+
+Completed in 122.8s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=2: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 2 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_2 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_2.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_2.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           2
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 2 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000048s
+  Sample time:          125.078641s
+  Total time:           125.078689s
+  Per-shot time:        125.078641s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 125.0786s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           125.0786s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_2.json[0m
+
+Completed in 132.0s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=3: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 3 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_3 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_3.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_3.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           3
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 3 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000053s
+  Sample time:          97.566561s
+  Total time:           97.566613s
+  Per-shot time:        97.566561s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 97.5666s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:            97.5666s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_3.json[0m
+
+Completed in 104.5s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=4: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 4 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_4 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_4.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_4.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           4
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 4 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000055s
+  Sample time:          127.180462s
+  Total time:           127.180517s
+  Per-shot time:        127.180462s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 127.1805s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           127.1805s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_4.json[0m
+
+Completed in 134.1s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=5: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 5 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_5 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_5.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_5.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           5
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 5 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000043s
+  Sample time:          106.690035s
+  Total time:           106.690078s
+  Per-shot time:        106.690035s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 106.6900s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           106.6900s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_5.json[0m
+
+Completed in 113.6s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=6: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 6 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_6 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_6.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_6.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           6
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 6 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000049s
+  Sample time:          120.806688s
+  Total time:           120.806737s
+  Per-shot time:        120.806688s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 120.8067s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           120.8067s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_6.json[0m
+
+Completed in 127.7s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=7: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 7 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_7 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_7.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_7.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           7
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 7 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000058s
+  Sample time:          101.686584s
+  Total time:           101.686643s
+  Per-shot time:        101.686584s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 101.6866s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           101.6866s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_7.json[0m
+
+Completed in 108.6s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=8: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 8 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_8 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_8.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_8.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           8
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 8 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000044s
+  Sample time:          106.940379s
+  Total time:           106.940423s
+  Per-shot time:        106.940379s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 106.9404s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           106.9404s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_8.json[0m
+
+Completed in 113.9s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=9: nqubits=200 ngates=800 num_hyper_samples=100
+  shots_per_batch=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --unique_sampling --take_all_final --batch_shots_policy custom --batch_qubit_policy custom --cudaq_timeout 4500 --ptsbe_sample_timeout 3600 --skip_ptsbe --nqubits 200 --ngates 800 --num_hyper_samples 100 --shots_per_batch 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,100 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,2,28 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_800g --circuit_id 9 --work_dir /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/work_circuit_9 --json_output /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_9.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_9.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               800
+  cudaq_nshots:         1
+  ptsbe_nshots:         100
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   custom, shots_per_batch: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 100]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 28]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  circuit_id:           9
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 9 from /workspace/ptsbe/scaling/data_collection/circuits/200q_800g
+  Circuit loaded in 0.0004s
+
+[1;92m[PHASE 2] Running CUDA-Q...[0m
+Running: python /workspace/ptsbe/stim_to_cudaq.py stim_script.stim cudaq_output.py
+
+=== CUDA-Q Timing Breakdown ===
+  Setup time:           0.000047s
+  Sample time:          123.749914s
+  Total time:           123.749961s
+  Per-shot time:        123.749914s
+
+=== CUDA-Q Results ===
+  Total number of distinct CUDA-Q shots collected:       1
+  Total number of distinct pieces of unlabeled CUDA-Q training data collected:       1
+  Total number of overall CUDA-Q shots collected:          1
+
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total: 123.7499s
+  CUDA-Q shots/s: 0.01
+  CUDA-Q unique shots/s: 0.01
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:           123.7499s +/- 0.0000s
+  PTSBE total:              0.0000s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.01 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.01 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/run_1_circuit_9.json[0m
+
+Completed in 130.7s (returncode=0)
+
+Combined results: /workspace/ptsbe/scaling/data_collection/figure_03_data_collection_speedup/200q_800g/python/output_data_collection_1/benchmark_combined.json
+
+====================================================================================================
+DATA COLLECTION 1 SUMMARY
+====================================================================================================
+ Run |   nq |   ng |  hyper |   ptsbe_time | contractions |    speedup | throughput_adv
+----------------------------------------------------------------------------------------------------
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+   1 |  200 |  800 |    100 |         None |         None |       None |           None
+====================================================================================================
+
+[internal container cleanup output removed]
