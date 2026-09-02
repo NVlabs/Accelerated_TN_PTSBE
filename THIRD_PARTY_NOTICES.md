@@ -31,7 +31,7 @@ The appliance contains CUDA, conda, Ubuntu packages, and other transitive compon
 | numpy | 1.26.4 | Core numerical arrays | BSD-3-Clause | [numpy/numpy](https://github.com/numpy/numpy) |
 | pandas | 2.3.2 | Histogram and benchmark-data handling | BSD-3-Clause | [pandas-dev/pandas](https://github.com/pandas-dev/pandas) |
 | matplotlib | 3.10.6 | Figure and histogram generation | Matplotlib License | [license](https://matplotlib.org/stable/project/license.html) · [source](https://github.com/matplotlib/matplotlib) |
-| scipy | 1.16.2 | Geometric statistics for Figure 7 | BSD-3-Clause | [scipy/scipy](https://github.com/scipy/scipy) |
+| scipy | 1.16.2 | Geometric statistics for Figure 6 | BSD-3-Clause | [scipy/scipy](https://github.com/scipy/scipy) |
 | mpi4py | 4.1.0 | CUDA-Q baseline and optional MPI support | BSD-3-Clause | [mpi4py/mpi4py](https://github.com/mpi4py/mpi4py) |
 
 ## Transitive and Bundled Components

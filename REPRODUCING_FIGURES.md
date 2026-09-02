@@ -69,32 +69,34 @@ Regenerate Figure 3 from the logs:
 bash run_setup.sh python scaling/data_collection/figure_03_data_collection_speedup/plot_final_throughput_advantage.py
 ```
 
-## Figure 4: Final-Batch-Size Sweep
+## Figure 4, Panel A: PTSBE Throughput Versus Final Batch Size
 
 Configurations use 200 qubits, gate counts 200–1000, and final batch sizes 24, 26, and 28.
+
+The canonical retained artifact is `paper_ptsbe_throughput_v4.{pdf,png}`.
 
 For each gate count, run the final-batch-size 24 and 26 scripts. Example:
 
 ```bash
-bash scaling/data_collection/figure_04_final_batch_size/200q_600g/run_data_collection_200q_600g_100hs_10nfbs_24fbs.sh
+bash scaling/data_collection/figure_04_panel_a_final_batch_size/200q_600g/run_data_collection_200q_600g_100hs_10nfbs_24fbs.sh
 
-bash scaling/data_collection/figure_04_final_batch_size/200q_600g/run_data_collection_200q_600g_100hs_10nfbs_26fbs.sh
+bash scaling/data_collection/figure_04_panel_a_final_batch_size/200q_600g/run_data_collection_200q_600g_100hs_10nfbs_26fbs.sh
 ```
 
-The final-batch-size 28 data are the corresponding Figure 3 PTSBE runs. When rerunning the complete campaign, copy each fresh 200-qubit Figure 3 result into the matching Figure 4 filename. Example:
+The final-batch-size 28 data are the corresponding Figure 3 PTSBE runs. When rerunning the complete campaign, copy each fresh 200-qubit Figure 3 result into the matching Figure 4 panel A filename. Example:
 
 ```bash
 cp scaling/data_collection/figure_03_data_collection_speedup/200q_600g_100hs_10nfbs_28fbs_ptsbe.txt \
-  scaling/data_collection/figure_04_final_batch_size/200q_600g_100hs_10nfbs_28fbs_ptsbe.txt
+  scaling/data_collection/figure_04_panel_a_final_batch_size/200q_600g_100hs_10nfbs_28fbs_ptsbe.txt
 ```
 
-Regenerate Figure 4:
+Regenerate Figure 4 panel A:
 
 ```bash
-bash run_setup.sh python scaling/data_collection/figure_04_final_batch_size/plot_final_fbs_sweep.py
+bash run_setup.sh python scaling/data_collection/figure_04_panel_a_final_batch_size/plot_final_fbs_sweep.py
 ```
 
-## Figure 5: Proportional-Sampling Speedup
+## Figure 4, Panel B: Proportional-Sampling Speedup
 
 Configurations:
 
@@ -105,26 +107,26 @@ Configurations:
 Run all four PTSBE shot-count scripts in each configuration directory. Example:
 
 ```bash
-bash scaling/data_collection/figure_05_proportional_speedup/100q_600g/run_data_collection_100q_600g_100hs_10bs_proportional_1000nshots.sh
+bash scaling/data_collection/figure_04_panel_b_proportional_speedup/100q_600g/run_data_collection_100q_600g_100hs_10bs_proportional_1000nshots.sh
 ```
 
-Figure 5 uses the matching CUDA-Q baselines from Figure 3. Copy fresh Figure 3 CUDA-Q logs into the Figure 5 directory before plotting a fully rerun campaign:
+Figure 4 panel B uses the matching CUDA-Q baselines from Figure 3. Copy fresh Figure 3 CUDA-Q logs into the Figure 4 panel B directory before plotting a fully rerun campaign:
 
 ```bash
 cp scaling/data_collection/figure_03_data_collection_speedup/100q_600g_100hs_cudaq.txt \
-  scaling/data_collection/figure_05_proportional_speedup/100q_600g_100hs_cudaq.txt
+  scaling/data_collection/figure_04_panel_b_proportional_speedup/100q_600g_100hs_cudaq.txt
 
 cp scaling/data_collection/figure_03_data_collection_speedup/200q_1000g_100hs_cudaq.txt \
-  scaling/data_collection/figure_05_proportional_speedup/200q_1000g_100hs_cudaq.txt
+  scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g_100hs_cudaq.txt
 ```
 
-Regenerate Figure 5:
+Regenerate Figure 4 panel B:
 
 ```bash
-bash run_setup.sh python scaling/data_collection/figure_05_proportional_speedup/plot_throughput_advantage.py
+bash run_setup.sh python scaling/data_collection/figure_04_panel_b_proportional_speedup/plot_throughput_advantage.py
 ```
 
-## Figure 6: Path-Finding Versus Contraction Cost
+## Figure 5: Path-Finding Versus Contraction Cost
 
 Configurations cover five qubit counts and five gate counts:
 
@@ -134,22 +136,22 @@ Configurations cover five qubit counts and five gate counts:
 Run the single collection script in each of the 25 configuration directories. Example:
 
 ```bash
-bash scaling/data_collection/figure_06_pathfinding_vs_contraction/100q_600g/run_data_collection_100q_600g_1hs_10nfbs_28fbs.sh
+bash scaling/data_collection/figure_05_pathfinding_vs_contraction/100q_600g/run_data_collection_100q_600g_1hs_10nfbs_28fbs.sh
 ```
 
-Each script runs the ten retained circuits with ten timing repeats. The Figure 6 plot uses RUN 1 from each circuit, matching the one-measurement-per-circuit analysis used by the other paper figures.
+Each script runs the ten retained circuits with ten timing repeats. The Figure 5 plot uses RUN 1 from each circuit, matching the one-measurement-per-circuit analysis used by the other paper figures.
 
-The two proportional-sampling stars are read from the 10000-shot Figure 5 logs, so rerun Figure 5 first when rebuilding those points.
+The two proportional-sampling stars are read from the 10000-shot Figure 4 panel B logs, so rerun Figure 4 panel B first when rebuilding those points.
 
-Regenerate Figure 6:
+Regenerate Figure 5:
 
 ```bash
-bash run_setup.sh python scaling/data_collection/figure_06_pathfinding_vs_contraction/plot_qubit_gate_sweep.py
+bash run_setup.sh python scaling/data_collection/figure_05_pathfinding_vs_contraction/plot_qubit_gate_sweep.py
 ```
 
-## Figure 7: Batch-Size Cost
+## Figure 6: Batch-Size Cost
 
-Figure 7 uses the 100-qubit, 600-gate circuit set.
+Figure 6 uses the 100-qubit, 600-gate circuit set.
 
 Run every combination of:
 
@@ -159,15 +161,15 @@ Run every combination of:
 Example:
 
 ```bash
-bash scaling/data_collection/figure_07_batch_size_cost/100q_600g/run_data_collection_100q_600g_100hs_10bs_2p1_ptsbe.sh
+bash scaling/data_collection/figure_06_batch_size_cost/100q_600g/run_data_collection_100q_600g_100hs_10bs_2p1_ptsbe.sh
 ```
 
 There are 21 primary configurations. Files containing `_RESTART` record recovery of an interrupted original run and are not part of a fresh campaign.
 
-Regenerate Figure 7:
+Regenerate Figure 6:
 
 ```bash
-bash run_setup.sh python scaling/data_collection/figure_07_batch_size_cost/plot_contraction_cost_scatter.py
+bash run_setup.sh python scaling/data_collection/figure_06_batch_size_cost/plot_contraction_cost_scatter.py
 ```
 
 ## Expected Failures and Resource Requirements

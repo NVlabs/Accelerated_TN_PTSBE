@@ -43,11 +43,11 @@ See [`DOCKER_BUILD_GUIDE.md`](DOCKER_BUILD_GUIDE.md) for build details, command 
 
 Reference circuits are stored in `scaling/data_collection/circuits/`. Circuit IDs 0–9 are the instances used in the paper runs.
 
-- `figure_03_data_collection_speedup`: non-proportional PTSBE/CUDA-Q speedup
-- `figure_04_final_batch_size`: final-batch-size sweep
-- `figure_05_proportional_speedup`: proportional-sampling speedup
-- `figure_06_pathfinding_vs_contraction`: contraction and path-finding costs
-- `figure_07_batch_size_cost`: per-batch cost versus batch size
+- Figure 3 — `figure_03_data_collection_speedup`: non-proportional PTSBE/CUDA-Q speedup
+- Figure 4, panel A — `figure_04_panel_a_final_batch_size`: PTSBE throughput versus final batch size
+- Figure 4, panel B — `figure_04_panel_b_proportional_speedup`: proportional-sampling speedup
+- Figure 5 — `figure_05_pathfinding_vs_contraction`: contraction and path-finding costs
+- Figure 6 — `figure_06_batch_size_cost`: per-batch cost versus batch size
 
 Each figure directory contains the retained PDF/PNG, plotting script, benchmark output logs, and per-configuration execution scripts.
 

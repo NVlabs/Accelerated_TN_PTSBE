@@ -1,0 +1,2789 @@
+# SANITIZED FOR PUBLIC RELEASE: internal filesystem and container-registry identifiers were replaced; container lifecycle output was removed; numerical benchmark output is unchanged.
+[internal container setup output removed]
+Creating symlinks...
+Copying project files...
+Running experiment...
+=== cuQuantum Environment Ready ===
+cuTensorNet version: 21100
+
+Setup complete!
+=== Starting Proportional Sampling 3 ===
+Copy done, starting Python...
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+run_data_collection (proportional3) started
+Fri Mar 27 05:58:54 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          On  |   00000000:6B:00.0 Off |                    0 |
+| N/A   34C    P0             61W /  700W |       0MiB /  81559MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Auto-detected 50 circuits from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g/config.json
+Capping num_circuits from 50 to 10
+Scaling script: /workspace/ptsbe/scaling/scaling_comparison_avg.py
+Working dir:    /workspace/ptsbe/scaling
+Output dir:     /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1
+Circuit dir:    /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+Num circuits:   10
+Total runs:     1 config(s) x 10 circuit(s) = 10
+
+======================================================================
+RUN 1/1 | circuit_id=0: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 0 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_0 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_0.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_0.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           0
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 0 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0111s
+[TIMING] CircuitToEinsum: 0.0568s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 270.0643s, total operands 0.004 GB
+  Batch 0: largest_intermediate=4194304.0, opt_cost=344343026.0
+  Batch 1: largest_intermediate=524288.0, opt_cost=190656936.0
+  Batch 2: largest_intermediate=1048576.0, opt_cost=243887447.0
+  Batch 3: largest_intermediate=1048576.0, opt_cost=149905683.0
+  Batch 4: largest_intermediate=2097152.0, opt_cost=214855461.0
+  Batch 5: largest_intermediate=262144.0, opt_cost=110383582.0
+  Batch 6: largest_intermediate=8388608.0, opt_cost=833209624.0
+  Batch 7: largest_intermediate=4194304.0, opt_cost=696828144.0
+  Batch 8: largest_intermediate=1048576.0, opt_cost=183550588.0
+  Batch 9: largest_intermediate=4194304.0, opt_cost=306007789.0
+  Batch 10: largest_intermediate=8388608.0, opt_cost=676647075.0
+  Batch 11: largest_intermediate=1048576.0, opt_cost=173774331.0
+  Batch 12: largest_intermediate=1048576.0, opt_cost=190784966.0
+  Batch 13: largest_intermediate=1048576.0, opt_cost=176051701.0
+  Batch 14: largest_intermediate=1048576.0, opt_cost=146297827.0
+  Batch 15: largest_intermediate=2097152.0, opt_cost=245023953.0
+  Batch 16: largest_intermediate=2097152.0, opt_cost=245387847.0
+  Batch 17: largest_intermediate=524288.0, opt_cost=70272427.0
+  Batch 18: largest_intermediate=32768.0, opt_cost=6230855.0
+  Batch 19: largest_intermediate=1024.0, opt_cost=236433.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 8.4028s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.1346s  gpu=0.1346s  contractions=1  (1.6% of loop)
+  Batch 1: cpu=0.1656s  gpu=0.1655s  contractions=6  (2.0% of loop)
+  Batch 2: cpu=0.2720s  gpu=0.2719s  contractions=10  (3.2% of loop)
+  Batch 3: cpu=0.2742s  gpu=0.2741s  contractions=10  (3.3% of loop)
+  Batch 4: cpu=0.3934s  gpu=0.3933s  contractions=10  (4.7% of loop)
+  Batch 5: cpu=0.2745s  gpu=0.2744s  contractions=10  (3.3% of loop)
+  Batch 6: cpu=0.3016s  gpu=0.3015s  contractions=10  (3.6% of loop)
+  Batch 7: cpu=0.4052s  gpu=0.4051s  contractions=10  (4.8% of loop)
+  Batch 8: cpu=0.2884s  gpu=0.2883s  contractions=10  (3.4% of loop)
+  Batch 9: cpu=0.2936s  gpu=0.2935s  contractions=10  (3.5% of loop)
+  Batch 10: cpu=0.4249s  gpu=0.4248s  contractions=10  (5.1% of loop)
+  Batch 11: cpu=0.3006s  gpu=0.3006s  contractions=10  (3.6% of loop)
+  Batch 12: cpu=0.2963s  gpu=0.2962s  contractions=10  (3.5% of loop)
+  Batch 13: cpu=0.2959s  gpu=0.2958s  contractions=10  (3.5% of loop)
+  Batch 14: cpu=0.4184s  gpu=0.4183s  contractions=10  (5.0% of loop)
+  Batch 15: cpu=0.3026s  gpu=0.3025s  contractions=10  (3.6% of loop)
+  Batch 16: cpu=0.3046s  gpu=0.3045s  contractions=10  (3.6% of loop)
+  Batch 17: cpu=0.4247s  gpu=0.4246s  contractions=10  (5.1% of loop)
+  Batch 18: cpu=0.2979s  gpu=0.2978s  contractions=10  (3.5% of loop)
+  Batch 19: cpu=0.2992s  gpu=0.2991s  contractions=10  (3.6% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0111s (  0.0%)
+  time_circuit_to_einsum        :   0.0568s (  0.0%)
+  time_build_expr_operands      : 270.0643s ( 97.0%)
+  time_contraction_loop         :   8.4028s (  3.0%)
+  time_apply_errors_total       :   2.0956s (  0.8%)
+  time_contract_cpu_total       :   6.1681s (  2.2%)
+  time_contract_gpu_total       :   6.1663s (  2.2%)
+  time_contract_batch_0         :   0.1346s (  0.0%)
+  time_contract_batch_1         :   0.1656s (  0.1%)
+  time_contract_batch_2         :   0.2720s (  0.1%)
+  time_contract_batch_3         :   0.2742s (  0.1%)
+  time_contract_batch_4         :   0.3934s (  0.1%)
+  time_contract_batch_5         :   0.2745s (  0.1%)
+  time_contract_batch_6         :   0.3016s (  0.1%)
+  time_contract_batch_7         :   0.4052s (  0.1%)
+  time_contract_batch_8         :   0.2884s (  0.1%)
+  time_contract_batch_9         :   0.2936s (  0.1%)
+  time_contract_batch_10        :   0.4249s (  0.2%)
+  time_contract_batch_11        :   0.3006s (  0.1%)
+  time_contract_batch_12        :   0.2963s (  0.1%)
+  time_contract_batch_13        :   0.2959s (  0.1%)
+  time_contract_batch_14        :   0.4184s (  0.2%)
+  time_contract_batch_15        :   0.3026s (  0.1%)
+  time_contract_batch_16        :   0.3046s (  0.1%)
+  time_contract_batch_17        :   0.4247s (  0.2%)
+  time_contract_batch_18        :   0.2979s (  0.1%)
+  time_contract_batch_19        :   0.2992s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 187
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 4194304.0
+  opt_cost_batch0               : 344343026.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.13457376098632812
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.16551859092712404
+  num_contractions_batch_1      : 6
+  gpu_contract_batch_2          : 0.2719278717041016
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.27409600067138673
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.3933052864074707
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.2743616313934326
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.3015088310241699
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.4051138229370117
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.28834637069702146
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.29347183990478515
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.4247738265991211
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.3005557765960693
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.2961655330657959
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.2957699527740479
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.4183458518981934
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.30251110649108887
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.3044726696014404
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.4245602569580078
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.2977947845458984
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.2991487350463867
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 8.4028s
+  PTSBE shots/s: 1.19
+  PTSBE unique shots/s: 1.19
+  num_contractions: 187
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:              8.4028s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              1.19 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       1.19 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_0.json[0m
+
+Completed in 283.4s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=1: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 1 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_1 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_1.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_1.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           1
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 1 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0111s
+[TIMING] CircuitToEinsum: 0.0575s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 353.5795s, total operands 0.005 GB
+  Batch 0: largest_intermediate=536870912.0, opt_cost=90075652788.0
+  Batch 1: largest_intermediate=536870912.0, opt_cost=110928194822.0
+  Batch 2: largest_intermediate=536870912.0, opt_cost=116392829207.0
+  Batch 3: largest_intermediate=1073741824.0, opt_cost=191155851975.0
+  Batch 4: largest_intermediate=1073741824.0, opt_cost=135928738879.0
+  Batch 5: largest_intermediate=536870912.0, opt_cost=153665034842.0
+  Batch 6: largest_intermediate=67108864.0, opt_cost=15046400384.0
+  Batch 7: largest_intermediate=268435456.0, opt_cost=104214119882.0
+  Batch 8: largest_intermediate=536870912.0, opt_cost=68244996324.0
+  Batch 9: largest_intermediate=536870912.0, opt_cost=114603212701.0
+  Batch 10: largest_intermediate=134217728.0, opt_cost=58402310840.0
+  Batch 11: largest_intermediate=268435456.0, opt_cost=37402417939.0
+  Batch 12: largest_intermediate=268435456.0, opt_cost=61259766983.0
+  Batch 13: largest_intermediate=268435456.0, opt_cost=38026204306.0
+  Batch 14: largest_intermediate=536870912.0, opt_cost=78107805835.0
+  Batch 15: largest_intermediate=268435456.0, opt_cost=26427578881.0
+  Batch 16: largest_intermediate=67108864.0, opt_cost=8339745384.0
+  Batch 17: largest_intermediate=536870912.0, opt_cost=83039031946.0
+  Batch 18: largest_intermediate=1048576.0, opt_cost=221318003.0
+  Batch 19: largest_intermediate=65536.0, opt_cost=13627447.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 67.03 GB free / 85.02 GB total (17.99 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 28.8042s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.1811s  gpu=0.1811s  contractions=1  (0.6% of loop)
+  Batch 1: cpu=2.1486s  gpu=2.1485s  contractions=10  (7.5% of loop)
+  Batch 2: cpu=1.0083s  gpu=1.0082s  contractions=10  (3.5% of loop)
+  Batch 3: cpu=2.7658s  gpu=2.7657s  contractions=10  (9.6% of loop)
+  Batch 4: cpu=2.4797s  gpu=2.4796s  contractions=10  (8.6% of loop)
+  Batch 5: cpu=2.6552s  gpu=2.6551s  contractions=10  (9.2% of loop)
+  Batch 6: cpu=0.4970s  gpu=0.4969s  contractions=10  (1.7% of loop)
+  Batch 7: cpu=1.2075s  gpu=1.2074s  contractions=10  (4.2% of loop)
+  Batch 8: cpu=1.3999s  gpu=1.3998s  contractions=10  (4.9% of loop)
+  Batch 9: cpu=2.5098s  gpu=2.5097s  contractions=10  (8.7% of loop)
+  Batch 10: cpu=0.9671s  gpu=0.9670s  contractions=10  (3.4% of loop)
+  Batch 11: cpu=0.9194s  gpu=0.9193s  contractions=10  (3.2% of loop)
+  Batch 12: cpu=0.7101s  gpu=0.7100s  contractions=10  (2.5% of loop)
+  Batch 13: cpu=0.8617s  gpu=0.8616s  contractions=10  (3.0% of loop)
+  Batch 14: cpu=1.9325s  gpu=1.9324s  contractions=10  (6.7% of loop)
+  Batch 15: cpu=0.7337s  gpu=0.7336s  contractions=10  (2.5% of loop)
+  Batch 16: cpu=0.4734s  gpu=0.4733s  contractions=10  (1.6% of loop)
+  Batch 17: cpu=2.6898s  gpu=2.6897s  contractions=10  (9.3% of loop)
+  Batch 18: cpu=0.4245s  gpu=0.4244s  contractions=10  (1.5% of loop)
+  Batch 19: cpu=0.2951s  gpu=0.2950s  contractions=10  (1.0% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0111s (  0.0%)
+  time_circuit_to_einsum        :   0.0575s (  0.0%)
+  time_build_expr_operands      : 353.5795s ( 92.5%)
+  time_contraction_loop         :  28.8042s (  7.5%)
+  time_apply_errors_total       :   1.7094s (  0.4%)
+  time_contract_cpu_total       :  26.8602s (  7.0%)
+  time_contract_gpu_total       :  26.8584s (  7.0%)
+  time_contract_batch_0         :   0.1811s (  0.0%)
+  time_contract_batch_1         :   2.1486s (  0.6%)
+  time_contract_batch_2         :   1.0083s (  0.3%)
+  time_contract_batch_3         :   2.7658s (  0.7%)
+  time_contract_batch_4         :   2.4797s (  0.6%)
+  time_contract_batch_5         :   2.6552s (  0.7%)
+  time_contract_batch_6         :   0.4970s (  0.1%)
+  time_contract_batch_7         :   1.2075s (  0.3%)
+  time_contract_batch_8         :   1.3999s (  0.4%)
+  time_contract_batch_9         :   2.5098s (  0.7%)
+  time_contract_batch_10        :   0.9671s (  0.3%)
+  time_contract_batch_11        :   0.9194s (  0.2%)
+  time_contract_batch_12        :   0.7101s (  0.2%)
+  time_contract_batch_13        :   0.8617s (  0.2%)
+  time_contract_batch_14        :   1.9325s (  0.5%)
+  time_contract_batch_15        :   0.7337s (  0.2%)
+  time_contract_batch_16        :   0.4734s (  0.1%)
+  time_contract_batch_17        :   2.6898s (  0.7%)
+  time_contract_batch_18        :   0.4245s (  0.1%)
+  time_contract_batch_19        :   0.2951s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 191
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 536870912.0
+  opt_cost_batch0               : 90075652788.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.18112693786621092
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 2.148506301879883
+  num_contractions_batch_1      : 10
+  gpu_contract_batch_2          : 1.0081742324829102
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 2.7657395935058595
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 2.479642639160156
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 2.6550620422363282
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.4969479675292968
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 1.2073541870117188
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 1.3998397064208985
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 2.5097058715820317
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.9670096969604491
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.9192686386108401
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.710025146484375
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.8615951004028319
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 1.9323974304199218
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.7336024627685547
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.47333887863159185
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 2.689692657470703
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.4243838653564453
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.2949517726898193
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 28.8042s
+  PTSBE shots/s: 0.35
+  PTSBE unique shots/s: 0.35
+  num_contractions: 191
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:             28.8042s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              0.35 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       0.35 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_1.json[0m
+
+Completed in 387.1s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=2: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 2 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_2 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_2.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_2.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           2
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 2 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0117s
+[TIMING] CircuitToEinsum: 0.0574s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 320.5538s, total operands 0.004 GB
+  Batch 0: largest_intermediate=8388608.0, opt_cost=2432075104.0
+  Batch 1: largest_intermediate=16777216.0, opt_cost=4017231532.0
+  Batch 2: largest_intermediate=33554432.0, opt_cost=5231404827.0
+  Batch 3: largest_intermediate=8388608.0, opt_cost=2831972376.0
+  Batch 4: largest_intermediate=16777216.0, opt_cost=2780121243.0
+  Batch 5: largest_intermediate=16777216.0, opt_cost=3993438328.0
+  Batch 6: largest_intermediate=8388608.0, opt_cost=1425373735.0
+  Batch 7: largest_intermediate=16777216.0, opt_cost=2973001366.0
+  Batch 8: largest_intermediate=4194304.0, opt_cost=816786508.0
+  Batch 9: largest_intermediate=16777216.0, opt_cost=2699668499.0
+  Batch 10: largest_intermediate=16777216.0, opt_cost=3695076604.0
+  Batch 11: largest_intermediate=4194304.0, opt_cost=1050454097.0
+  Batch 12: largest_intermediate=16777216.0, opt_cost=3570817128.0
+  Batch 13: largest_intermediate=8388608.0, opt_cost=2598348490.0
+  Batch 14: largest_intermediate=4194304.0, opt_cost=2072459865.0
+  Batch 15: largest_intermediate=16777216.0, opt_cost=2205066779.0
+  Batch 16: largest_intermediate=4194304.0, opt_cost=924999800.0
+  Batch 17: largest_intermediate=4194304.0, opt_cost=1368931521.0
+  Batch 18: largest_intermediate=524288.0, opt_cost=102828408.0
+  Batch 19: largest_intermediate=8192.0, opt_cost=1588643.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 82.67 GB free / 85.02 GB total (2.35 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 8.4351s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.0564s  gpu=0.0564s  contractions=1  (0.7% of loop)
+  Batch 1: cpu=0.2438s  gpu=0.2437s  contractions=8  (2.9% of loop)
+  Batch 2: cpu=0.3136s  gpu=0.3135s  contractions=10  (3.7% of loop)
+  Batch 3: cpu=0.2916s  gpu=0.2916s  contractions=10  (3.5% of loop)
+  Batch 4: cpu=0.3233s  gpu=0.3232s  contractions=10  (3.8% of loop)
+  Batch 5: cpu=0.3066s  gpu=0.3065s  contractions=10  (3.6% of loop)
+  Batch 6: cpu=0.2955s  gpu=0.2954s  contractions=10  (3.5% of loop)
+  Batch 7: cpu=0.4193s  gpu=0.4192s  contractions=10  (5.0% of loop)
+  Batch 8: cpu=0.2913s  gpu=0.2912s  contractions=10  (3.5% of loop)
+  Batch 9: cpu=0.3426s  gpu=0.3425s  contractions=10  (4.1% of loop)
+  Batch 10: cpu=0.4434s  gpu=0.4433s  contractions=10  (5.3% of loop)
+  Batch 11: cpu=0.3082s  gpu=0.3082s  contractions=10  (3.7% of loop)
+  Batch 12: cpu=0.3111s  gpu=0.3110s  contractions=10  (3.7% of loop)
+  Batch 13: cpu=0.3331s  gpu=0.3330s  contractions=10  (3.9% of loop)
+  Batch 14: cpu=0.4267s  gpu=0.4266s  contractions=10  (5.1% of loop)
+  Batch 15: cpu=0.3306s  gpu=0.3305s  contractions=10  (3.9% of loop)
+  Batch 16: cpu=0.3178s  gpu=0.3177s  contractions=10  (3.8% of loop)
+  Batch 17: cpu=0.4575s  gpu=0.4574s  contractions=10  (5.4% of loop)
+  Batch 18: cpu=0.2989s  gpu=0.2988s  contractions=10  (3.5% of loop)
+  Batch 19: cpu=0.3001s  gpu=0.3000s  contractions=10  (3.6% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0117s (  0.0%)
+  time_circuit_to_einsum        :   0.0574s (  0.0%)
+  time_build_expr_operands      : 320.5538s ( 97.4%)
+  time_contraction_loop         :   8.4351s (  2.6%)
+  time_apply_errors_total       :   1.8859s (  0.6%)
+  time_contract_cpu_total       :   6.4115s (  1.9%)
+  time_contract_gpu_total       :   6.4097s (  1.9%)
+  time_contract_batch_0         :   0.0564s (  0.0%)
+  time_contract_batch_1         :   0.2438s (  0.1%)
+  time_contract_batch_2         :   0.3136s (  0.1%)
+  time_contract_batch_3         :   0.2916s (  0.1%)
+  time_contract_batch_4         :   0.3233s (  0.1%)
+  time_contract_batch_5         :   0.3066s (  0.1%)
+  time_contract_batch_6         :   0.2955s (  0.1%)
+  time_contract_batch_7         :   0.4193s (  0.1%)
+  time_contract_batch_8         :   0.2913s (  0.1%)
+  time_contract_batch_9         :   0.3426s (  0.1%)
+  time_contract_batch_10        :   0.4434s (  0.1%)
+  time_contract_batch_11        :   0.3082s (  0.1%)
+  time_contract_batch_12        :   0.3111s (  0.1%)
+  time_contract_batch_13        :   0.3331s (  0.1%)
+  time_contract_batch_14        :   0.4267s (  0.1%)
+  time_contract_batch_15        :   0.3306s (  0.1%)
+  time_contract_batch_16        :   0.3178s (  0.1%)
+  time_contract_batch_17        :   0.4575s (  0.1%)
+  time_contract_batch_18        :   0.2989s (  0.1%)
+  time_contract_batch_19        :   0.3001s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 189
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 8388608.0
+  opt_cost_batch0               : 2432075104.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.05638639831542969
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.24370287895202636
+  num_contractions_batch_1      : 8
+  gpu_contract_batch_2          : 0.31353254318237306
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.2915527362823486
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.3231572875976563
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.30653491783142084
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.2953897247314453
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.41922780990600583
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.29117475318908687
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.34246428680419927
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.4432698211669922
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.3081516494750976
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.3109680309295654
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.33303786087036125
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.426635036468506
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.33053862762451175
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.3176991329193115
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.4574290962219238
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.29882828903198244
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.29996915054321294
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 8.4351s
+  PTSBE shots/s: 1.19
+  PTSBE unique shots/s: 1.19
+  num_contractions: 189
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:              8.4351s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              1.19 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       1.19 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_2.json[0m
+
+Completed in 333.6s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=3: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 3 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_3 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_3.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_3.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           3
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 3 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0112s
+[TIMING] CircuitToEinsum: 0.0595s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 270.4154s, total operands 0.004 GB
+  Batch 0: largest_intermediate=2097152.0, opt_cost=241179008.0
+  Batch 1: largest_intermediate=1048576.0, opt_cost=144512032.0
+  Batch 2: largest_intermediate=524288.0, opt_cost=79282146.0
+  Batch 3: largest_intermediate=1048576.0, opt_cost=188988513.0
+  Batch 4: largest_intermediate=1048576.0, opt_cost=133396198.0
+  Batch 5: largest_intermediate=262144.0, opt_cost=68188133.0
+  Batch 6: largest_intermediate=524288.0, opt_cost=77614861.0
+  Batch 7: largest_intermediate=1048576.0, opt_cost=121258700.0
+  Batch 8: largest_intermediate=4194304.0, opt_cost=546768491.0
+  Batch 9: largest_intermediate=1048576.0, opt_cost=149272560.0
+  Batch 10: largest_intermediate=1048576.0, opt_cost=144879233.0
+  Batch 11: largest_intermediate=4194304.0, opt_cost=371363587.0
+  Batch 12: largest_intermediate=2097152.0, opt_cost=236678702.0
+  Batch 13: largest_intermediate=4194304.0, opt_cost=429666355.0
+  Batch 14: largest_intermediate=524288.0, opt_cost=85308756.0
+  Batch 15: largest_intermediate=1048576.0, opt_cost=148023225.0
+  Batch 16: largest_intermediate=524288.0, opt_cost=68081076.0
+  Batch 17: largest_intermediate=524288.0, opt_cost=103980370.0
+  Batch 18: largest_intermediate=32768.0, opt_cost=5610118.0
+  Batch 19: largest_intermediate=2048.0, opt_cost=288884.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 84.09 GB free / 85.02 GB total (0.93 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 7.9691s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.0584s  gpu=0.0584s  contractions=1  (0.7% of loop)
+  Batch 1: cpu=0.2717s  gpu=0.2716s  contractions=10  (3.4% of loop)
+  Batch 2: cpu=0.2707s  gpu=0.2706s  contractions=10  (3.4% of loop)
+  Batch 3: cpu=0.3852s  gpu=0.3851s  contractions=10  (4.8% of loop)
+  Batch 4: cpu=0.2818s  gpu=0.2817s  contractions=10  (3.5% of loop)
+  Batch 5: cpu=0.2799s  gpu=0.2798s  contractions=10  (3.5% of loop)
+  Batch 6: cpu=0.2759s  gpu=0.2758s  contractions=10  (3.5% of loop)
+  Batch 7: cpu=0.2832s  gpu=0.2831s  contractions=10  (3.6% of loop)
+  Batch 8: cpu=0.2995s  gpu=0.2994s  contractions=10  (3.8% of loop)
+  Batch 9: cpu=0.2899s  gpu=0.2899s  contractions=10  (3.6% of loop)
+  Batch 10: cpu=0.4066s  gpu=0.4065s  contractions=10  (5.1% of loop)
+  Batch 11: cpu=0.2976s  gpu=0.2975s  contractions=10  (3.7% of loop)
+  Batch 12: cpu=0.3007s  gpu=0.3006s  contractions=10  (3.8% of loop)
+  Batch 13: cpu=0.4250s  gpu=0.4249s  contractions=10  (5.3% of loop)
+  Batch 14: cpu=0.2940s  gpu=0.2939s  contractions=10  (3.7% of loop)
+  Batch 15: cpu=0.3015s  gpu=0.3014s  contractions=10  (3.8% of loop)
+  Batch 16: cpu=0.2954s  gpu=0.2953s  contractions=10  (3.7% of loop)
+  Batch 17: cpu=0.4267s  gpu=0.4266s  contractions=10  (5.4% of loop)
+  Batch 18: cpu=0.2983s  gpu=0.2982s  contractions=10  (3.7% of loop)
+  Batch 19: cpu=0.2987s  gpu=0.2986s  contractions=10  (3.7% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0112s (  0.0%)
+  time_circuit_to_einsum        :   0.0595s (  0.0%)
+  time_build_expr_operands      : 270.4154s ( 97.1%)
+  time_contraction_loop         :   7.9691s (  2.9%)
+  time_apply_errors_total       :   1.7914s (  0.6%)
+  time_contract_cpu_total       :   6.0409s (  2.2%)
+  time_contract_gpu_total       :   6.0390s (  2.2%)
+  time_contract_batch_0         :   0.0584s (  0.0%)
+  time_contract_batch_1         :   0.2717s (  0.1%)
+  time_contract_batch_2         :   0.2707s (  0.1%)
+  time_contract_batch_3         :   0.3852s (  0.1%)
+  time_contract_batch_4         :   0.2818s (  0.1%)
+  time_contract_batch_5         :   0.2799s (  0.1%)
+  time_contract_batch_6         :   0.2759s (  0.1%)
+  time_contract_batch_7         :   0.2832s (  0.1%)
+  time_contract_batch_8         :   0.2995s (  0.1%)
+  time_contract_batch_9         :   0.2899s (  0.1%)
+  time_contract_batch_10        :   0.4066s (  0.1%)
+  time_contract_batch_11        :   0.2976s (  0.1%)
+  time_contract_batch_12        :   0.3007s (  0.1%)
+  time_contract_batch_13        :   0.4250s (  0.2%)
+  time_contract_batch_14        :   0.2940s (  0.1%)
+  time_contract_batch_15        :   0.3015s (  0.1%)
+  time_contract_batch_16        :   0.2954s (  0.1%)
+  time_contract_batch_17        :   0.4267s (  0.2%)
+  time_contract_batch_18        :   0.2983s (  0.1%)
+  time_contract_batch_19        :   0.2987s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 191
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 2097152.0
+  opt_cost_batch0               : 241179008.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.05837459182739258
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.27164406394958496
+  num_contractions_batch_1      : 10
+  gpu_contract_batch_2          : 0.27059456062316894
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.38509232330322263
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.28174940490722655
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.2798168296813965
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.2757967987060547
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.28310566520690916
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.29939932632446287
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.2898514537811279
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.4065492115020751
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.29751420593261724
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.30056716918945314
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.42490825271606447
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.2939040641784668
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.30142131042480463
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.29530998611450193
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.4266058502197266
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.2982016010284424
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.2986234893798828
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 7.9691s
+  PTSBE shots/s: 1.25
+  PTSBE unique shots/s: 1.25
+  num_contractions: 191
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:              7.9691s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              1.25 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       1.25 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_3.json[0m
+
+Completed in 283.1s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=4: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 4 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_4 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_4.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_4.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           4
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 4 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0117s
+[TIMING] CircuitToEinsum: 0.0570s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 354.4786s, total operands 0.005 GB
+  Batch 0: largest_intermediate=2097152.0, opt_cost=627102813.0
+  Batch 1: largest_intermediate=2097152.0, opt_cost=738706312.0
+  Batch 2: largest_intermediate=2097152.0, opt_cost=423880659.0
+  Batch 3: largest_intermediate=1048576.0, opt_cost=314144845.0
+  Batch 4: largest_intermediate=4194304.0, opt_cost=611642857.0
+  Batch 5: largest_intermediate=4194304.0, opt_cost=1095055982.0
+  Batch 6: largest_intermediate=524288.0, opt_cost=149903139.0
+  Batch 7: largest_intermediate=2097152.0, opt_cost=550793630.0
+  Batch 8: largest_intermediate=524288.0, opt_cost=216958565.0
+  Batch 9: largest_intermediate=2097152.0, opt_cost=268364878.0
+  Batch 10: largest_intermediate=4194304.0, opt_cost=555301888.0
+  Batch 11: largest_intermediate=524288.0, opt_cost=156471403.0
+  Batch 12: largest_intermediate=4194304.0, opt_cost=385149810.0
+  Batch 13: largest_intermediate=2097152.0, opt_cost=368357808.0
+  Batch 14: largest_intermediate=4194304.0, opt_cost=425435562.0
+  Batch 15: largest_intermediate=4194304.0, opt_cost=538773774.0
+  Batch 16: largest_intermediate=4194304.0, opt_cost=822267085.0
+  Batch 17: largest_intermediate=4194304.0, opt_cost=620549691.0
+  Batch 18: largest_intermediate=524288.0, opt_cost=73770690.0
+  Batch 19: largest_intermediate=4096.0, opt_cost=666514.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 83.96 GB free / 85.02 GB total (1.06 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 7.9331s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.0574s  gpu=0.0574s  contractions=1  (0.7% of loop)
+  Batch 1: cpu=0.2212s  gpu=0.2211s  contractions=8  (2.8% of loop)
+  Batch 2: cpu=0.2790s  gpu=0.2789s  contractions=10  (3.5% of loop)
+  Batch 3: cpu=0.2780s  gpu=0.2779s  contractions=10  (3.5% of loop)
+  Batch 4: cpu=0.3990s  gpu=0.3989s  contractions=10  (5.0% of loop)
+  Batch 5: cpu=0.3004s  gpu=0.3003s  contractions=10  (3.8% of loop)
+  Batch 6: cpu=0.2800s  gpu=0.2799s  contractions=10  (3.5% of loop)
+  Batch 7: cpu=0.4149s  gpu=0.4148s  contractions=10  (5.2% of loop)
+  Batch 8: cpu=0.2850s  gpu=0.2849s  contractions=10  (3.6% of loop)
+  Batch 9: cpu=0.2881s  gpu=0.2880s  contractions=10  (3.6% of loop)
+  Batch 10: cpu=0.2954s  gpu=0.2953s  contractions=10  (3.7% of loop)
+  Batch 11: cpu=0.2883s  gpu=0.2882s  contractions=10  (3.6% of loop)
+  Batch 12: cpu=0.2975s  gpu=0.2974s  contractions=10  (3.7% of loop)
+  Batch 13: cpu=0.2984s  gpu=0.2983s  contractions=10  (3.8% of loop)
+  Batch 14: cpu=0.4264s  gpu=0.4263s  contractions=10  (5.4% of loop)
+  Batch 15: cpu=0.3134s  gpu=0.3133s  contractions=10  (4.0% of loop)
+  Batch 16: cpu=0.3074s  gpu=0.3073s  contractions=10  (3.9% of loop)
+  Batch 17: cpu=0.3112s  gpu=0.3111s  contractions=10  (3.9% of loop)
+  Batch 18: cpu=0.4234s  gpu=0.4233s  contractions=10  (5.3% of loop)
+  Batch 19: cpu=0.2993s  gpu=0.2992s  contractions=10  (3.8% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0117s (  0.0%)
+  time_circuit_to_einsum        :   0.0570s (  0.0%)
+  time_build_expr_operands      : 354.4786s ( 97.8%)
+  time_contraction_loop         :   7.9331s (  2.2%)
+  time_apply_errors_total       :   1.7316s (  0.5%)
+  time_contract_cpu_total       :   6.0634s (  1.7%)
+  time_contract_gpu_total       :   6.0616s (  1.7%)
+  time_contract_batch_0         :   0.0574s (  0.0%)
+  time_contract_batch_1         :   0.2212s (  0.1%)
+  time_contract_batch_2         :   0.2790s (  0.1%)
+  time_contract_batch_3         :   0.2780s (  0.1%)
+  time_contract_batch_4         :   0.3990s (  0.1%)
+  time_contract_batch_5         :   0.3004s (  0.1%)
+  time_contract_batch_6         :   0.2800s (  0.1%)
+  time_contract_batch_7         :   0.4149s (  0.1%)
+  time_contract_batch_8         :   0.2850s (  0.1%)
+  time_contract_batch_9         :   0.2881s (  0.1%)
+  time_contract_batch_10        :   0.2954s (  0.1%)
+  time_contract_batch_11        :   0.2883s (  0.1%)
+  time_contract_batch_12        :   0.2975s (  0.1%)
+  time_contract_batch_13        :   0.2984s (  0.1%)
+  time_contract_batch_14        :   0.4264s (  0.1%)
+  time_contract_batch_15        :   0.3134s (  0.1%)
+  time_contract_batch_16        :   0.3074s (  0.1%)
+  time_contract_batch_17        :   0.3112s (  0.1%)
+  time_contract_batch_18        :   0.4234s (  0.1%)
+  time_contract_batch_19        :   0.2993s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 189
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 2097152.0
+  opt_cost_batch0               : 627102813.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.05738217544555664
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.2210886402130127
+  num_contractions_batch_1      : 8
+  gpu_contract_batch_2          : 0.27886367797851563
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.27794582366943354
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.39886995124816893
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.30025452804565433
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.2799087982177734
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.414761438369751
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.2848514556884766
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.2880041942596436
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.2952786560058594
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.2882159061431885
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.2973924140930176
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.29825663948059083
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.4263378276824952
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.3132873611450196
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.3072676486968994
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.31107389068603514
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.4233250579833984
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.29919980621337894
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 7.9331s
+  PTSBE shots/s: 1.26
+  PTSBE unique shots/s: 1.26
+  num_contractions: 189
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:              7.9331s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              1.26 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       1.26 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_4.json[0m
+
+Completed in 367.1s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=5: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 5 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_5 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_5.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_5.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           5
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 5 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0116s
+[TIMING] CircuitToEinsum: 0.0597s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 382.0938s, total operands 0.005 GB
+  Batch 0: largest_intermediate=1073741824.0, opt_cost=329705891716.0
+  Batch 1: largest_intermediate=536870912.0, opt_cost=370258410776.0
+  Batch 2: largest_intermediate=1073741824.0, opt_cost=233982672410.0
+  Batch 3: largest_intermediate=1073741824.0, opt_cost=324684821932.0
+  Batch 4: largest_intermediate=536870912.0, opt_cost=56933878059.0
+  Batch 5: largest_intermediate=1073741824.0, opt_cost=793099333048.0
+  Batch 6: largest_intermediate=1073741824.0, opt_cost=357072571878.0
+  Batch 7: largest_intermediate=1073741824.0, opt_cost=1483676611024.0
+  Batch 8: largest_intermediate=1073741824.0, opt_cost=558977144236.0
+  Batch 9: largest_intermediate=1073741824.0, opt_cost=165445827773.0
+  Batch 10: largest_intermediate=1073741824.0, opt_cost=225593641200.0
+  Batch 11: largest_intermediate=1073741824.0, opt_cost=259244553401.0
+  Batch 12: largest_intermediate=1073741824.0, opt_cost=570621146928.0
+  Batch 13: largest_intermediate=2147483648.0, opt_cost=907813189712.0
+  Batch 14: largest_intermediate=1073741824.0, opt_cost=222967301866.0
+  Batch 15: largest_intermediate=536870912.0, opt_cost=233713181582.0
+  Batch 16: largest_intermediate=536870912.0, opt_cost=88510240732.0
+  Batch 17: largest_intermediate=536870912.0, opt_cost=69429603717.0
+  Batch 18: largest_intermediate=8388608.0, opt_cost=1240291640.0
+  Batch 19: largest_intermediate=65536.0, opt_cost=12853015.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 67.01 GB free / 85.02 GB total (18.00 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 67.01 GB free / 85.02 GB total (18.00 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 67.01 GB free / 85.02 GB total (18.00 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 67.01 GB free / 85.02 GB total (18.00 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 67.01 GB free / 85.02 GB total (18.00 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 67.01 GB free / 85.02 GB total (18.00 GB in use)
+  [OOM] GPU out of memory during contraction (sample 0, batch 7, bitstring loop): Out of memory allocating 68,015,462,912 bytes (allocated so far: 17,210,170,880 bytes).
+  [OOM] Exiting PTSBE contraction loop (completed 0/1 samples)
+[TIMING] Contraction loop total: 37.1439s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.6185s  gpu=0.6185s  contractions=1  (1.7% of loop)
+  Batch 1: cpu=5.1012s  gpu=5.1011s  contractions=10  (13.7% of loop)
+  Batch 2: cpu=3.6707s  gpu=3.6706s  contractions=10  (9.9% of loop)
+  Batch 3: cpu=5.1476s  gpu=5.1475s  contractions=10  (13.9% of loop)
+  Batch 4: cpu=0.9049s  gpu=0.9047s  contractions=10  (2.4% of loop)
+  Batch 5: cpu=14.8853s  gpu=14.8853s  contractions=10  (40.1% of loop)
+  Batch 6: cpu=5.7808s  gpu=5.7807s  contractions=10  (15.6% of loop)
+  Batch 7: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 8: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 9: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 10: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 11: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 12: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 13: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 14: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 15: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 16: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 17: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 18: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+  Batch 19: cpu=0.0000s  gpu=0.0000s  contractions=0  (0.0% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0116s (  0.0%)
+  time_circuit_to_einsum        :   0.0597s (  0.0%)
+  time_build_expr_operands      : 382.0938s ( 91.1%)
+  time_contraction_loop         :  37.1439s (  8.9%)
+  time_apply_errors_total       :   0.7052s (  0.2%)
+  time_contract_cpu_total       :  36.1090s (  8.6%)
+  time_contract_gpu_total       :  36.1084s (  8.6%)
+  time_contract_batch_0         :   0.6185s (  0.1%)
+  time_contract_batch_1         :   5.1012s (  1.2%)
+  time_contract_batch_2         :   3.6707s (  0.9%)
+  time_contract_batch_3         :   5.1476s (  1.2%)
+  time_contract_batch_4         :   0.9049s (  0.2%)
+  time_contract_batch_5         :  14.8853s (  3.5%)
+  time_contract_batch_6         :   5.7808s (  1.4%)
+  time_contract_batch_7         :   0.0000s (  0.0%)
+  time_contract_batch_8         :   0.0000s (  0.0%)
+  time_contract_batch_9         :   0.0000s (  0.0%)
+  time_contract_batch_10        :   0.0000s (  0.0%)
+  time_contract_batch_11        :   0.0000s (  0.0%)
+  time_contract_batch_12        :   0.0000s (  0.0%)
+  time_contract_batch_13        :   0.0000s (  0.0%)
+  time_contract_batch_14        :   0.0000s (  0.0%)
+  time_contract_batch_15        :   0.0000s (  0.0%)
+  time_contract_batch_16        :   0.0000s (  0.0%)
+  time_contract_batch_17        :   0.0000s (  0.0%)
+  time_contract_batch_18        :   0.0000s (  0.0%)
+  time_contract_batch_19        :   0.0000s (  0.0%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 61
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 1073741824.0
+  opt_cost_batch0               : 329705891716.0
+  num_timed_out_samples         : 0
+  oom_error                     : True
+  gpu_contract_batch_0          : 0.618510009765625
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 5.101071624755859
+  num_contractions_batch_1      : 10
+  gpu_contract_batch_2          : 3.670564910888672
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 5.147529876708984
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.9047277526855468
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 14.885292114257814
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 5.7806964721679694
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0
+  num_contractions_batch_7      : 0
+  gpu_contract_batch_8          : 0
+  num_contractions_batch_8      : 0
+  gpu_contract_batch_9          : 0
+  num_contractions_batch_9      : 0
+  gpu_contract_batch_10         : 0
+  num_contractions_batch_10     : 0
+  gpu_contract_batch_11         : 0
+  num_contractions_batch_11     : 0
+  gpu_contract_batch_12         : 0
+  num_contractions_batch_12     : 0
+  gpu_contract_batch_13         : 0
+  num_contractions_batch_13     : 0
+  gpu_contract_batch_14         : 0
+  num_contractions_batch_14     : 0
+  gpu_contract_batch_15         : 0
+  num_contractions_batch_15     : 0
+  gpu_contract_batch_16         : 0
+  num_contractions_batch_16     : 0
+  gpu_contract_batch_17         : 0
+  num_contractions_batch_17     : 0
+  gpu_contract_batch_18         : 0
+  num_contractions_batch_18     : 0
+  gpu_contract_batch_19         : 0
+  num_contractions_batch_19     : 0
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       0
+  Total number of overall PTSBE shots collected:          0
+  Total number of distinct PTSBE pieces of labeled training data collected:     0
+
+[1;93m[SKIPPED] Circuit 1 comparison skipped: PTSBE ran out of GPU memory[0m
+  Moving on to the next circuit...
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:             37.1439s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       0.00 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_5.json[0m
+
+Completed in 424.0s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=6: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 6 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_6 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_6.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_6.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           6
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 6 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0112s
+[TIMING] CircuitToEinsum: 0.0640s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 291.4387s, total operands 0.004 GB
+  Batch 0: largest_intermediate=8388608.0, opt_cost=1725600838.0
+  Batch 1: largest_intermediate=4194304.0, opt_cost=752755498.0
+  Batch 2: largest_intermediate=4194304.0, opt_cost=627264538.0
+  Batch 3: largest_intermediate=33554432.0, opt_cost=2284706160.0
+  Batch 4: largest_intermediate=33554432.0, opt_cost=3282891127.0
+  Batch 5: largest_intermediate=8388608.0, opt_cost=1083543833.0
+  Batch 6: largest_intermediate=4194304.0, opt_cost=790193468.0
+  Batch 7: largest_intermediate=4194304.0, opt_cost=982082635.0
+  Batch 8: largest_intermediate=8388608.0, opt_cost=1004986538.0
+  Batch 9: largest_intermediate=33554432.0, opt_cost=3539029570.0
+  Batch 10: largest_intermediate=4194304.0, opt_cost=793873149.0
+  Batch 11: largest_intermediate=33554432.0, opt_cost=2793891102.0
+  Batch 12: largest_intermediate=8388608.0, opt_cost=1750318339.0
+  Batch 13: largest_intermediate=2097152.0, opt_cost=358053408.0
+  Batch 14: largest_intermediate=8388608.0, opt_cost=974651480.0
+  Batch 15: largest_intermediate=16777216.0, opt_cost=1210116330.0
+  Batch 16: largest_intermediate=1048576.0, opt_cost=121166895.0
+  Batch 17: largest_intermediate=65536.0, opt_cost=9933703.0
+  Batch 18: largest_intermediate=8192.0, opt_cost=1246637.0
+  Batch 19: largest_intermediate=4096.0, opt_cost=412012.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 83.77 GB free / 85.02 GB total (1.24 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 8.2281s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.0679s  gpu=0.0679s  contractions=1  (0.8% of loop)
+  Batch 1: cpu=0.2784s  gpu=0.2783s  contractions=10  (3.4% of loop)
+  Batch 2: cpu=0.2801s  gpu=0.2800s  contractions=10  (3.4% of loop)
+  Batch 3: cpu=0.4103s  gpu=0.4102s  contractions=10  (5.0% of loop)
+  Batch 4: cpu=0.3266s  gpu=0.3265s  contractions=10  (4.0% of loop)
+  Batch 5: cpu=0.3051s  gpu=0.3050s  contractions=10  (3.7% of loop)
+  Batch 6: cpu=0.2904s  gpu=0.2903s  contractions=10  (3.5% of loop)
+  Batch 7: cpu=0.3028s  gpu=0.3027s  contractions=10  (3.7% of loop)
+  Batch 8: cpu=0.2905s  gpu=0.2904s  contractions=10  (3.5% of loop)
+  Batch 9: cpu=0.3256s  gpu=0.3255s  contractions=10  (4.0% of loop)
+  Batch 10: cpu=0.4129s  gpu=0.4128s  contractions=10  (5.0% of loop)
+  Batch 11: cpu=0.3347s  gpu=0.3346s  contractions=10  (4.1% of loop)
+  Batch 12: cpu=0.3087s  gpu=0.3086s  contractions=10  (3.8% of loop)
+  Batch 13: cpu=0.4162s  gpu=0.4161s  contractions=10  (5.1% of loop)
+  Batch 14: cpu=0.3118s  gpu=0.3117s  contractions=10  (3.8% of loop)
+  Batch 15: cpu=0.3317s  gpu=0.3316s  contractions=10  (4.0% of loop)
+  Batch 16: cpu=0.3011s  gpu=0.3010s  contractions=10  (3.7% of loop)
+  Batch 17: cpu=0.4196s  gpu=0.4195s  contractions=10  (5.1% of loop)
+  Batch 18: cpu=0.2941s  gpu=0.2940s  contractions=10  (3.6% of loop)
+  Batch 19: cpu=0.2987s  gpu=0.2986s  contractions=10  (3.6% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0112s (  0.0%)
+  time_circuit_to_einsum        :   0.0640s (  0.0%)
+  time_build_expr_operands      : 291.4387s ( 97.2%)
+  time_contraction_loop         :   8.2281s (  2.7%)
+  time_apply_errors_total       :   1.7813s (  0.6%)
+  time_contract_cpu_total       :   6.3073s (  2.1%)
+  time_contract_gpu_total       :   6.3054s (  2.1%)
+  time_contract_batch_0         :   0.0679s (  0.0%)
+  time_contract_batch_1         :   0.2784s (  0.1%)
+  time_contract_batch_2         :   0.2801s (  0.1%)
+  time_contract_batch_3         :   0.4103s (  0.1%)
+  time_contract_batch_4         :   0.3266s (  0.1%)
+  time_contract_batch_5         :   0.3051s (  0.1%)
+  time_contract_batch_6         :   0.2904s (  0.1%)
+  time_contract_batch_7         :   0.3028s (  0.1%)
+  time_contract_batch_8         :   0.2905s (  0.1%)
+  time_contract_batch_9         :   0.3256s (  0.1%)
+  time_contract_batch_10        :   0.4129s (  0.1%)
+  time_contract_batch_11        :   0.3347s (  0.1%)
+  time_contract_batch_12        :   0.3087s (  0.1%)
+  time_contract_batch_13        :   0.4162s (  0.1%)
+  time_contract_batch_14        :   0.3118s (  0.1%)
+  time_contract_batch_15        :   0.3317s (  0.1%)
+  time_contract_batch_16        :   0.3011s (  0.1%)
+  time_contract_batch_17        :   0.4196s (  0.1%)
+  time_contract_batch_18        :   0.2941s (  0.1%)
+  time_contract_batch_19        :   0.2987s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 191
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 8388608.0
+  opt_cost_batch0               : 1725600838.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.06785657501220703
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.2782706241607666
+  num_contractions_batch_1      : 10
+  gpu_contract_batch_2          : 0.2800118408203125
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.41022038269042965
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.3265350322723389
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.30501801681518553
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.2902698230743408
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.30270969963073724
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.29043964958190915
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.32548611259460447
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.4128278369903565
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.33462620544433597
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.3086462707519531
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.41609238815307614
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.31171356582641596
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.3316045799255371
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.3009552936553955
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.4195026187896729
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.2940074253082275
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.2986039371490478
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 8.2281s
+  PTSBE shots/s: 1.22
+  PTSBE unique shots/s: 1.22
+  num_contractions: 191
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:              8.2281s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              1.22 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       1.22 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_6.json[0m
+
+Completed in 304.4s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=7: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 7 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_7 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_7.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_7.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           7
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 7 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0111s
+[TIMING] CircuitToEinsum: 0.0592s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 288.9128s, total operands 0.004 GB
+  Batch 0: largest_intermediate=8388608.0, opt_cost=1827663347.0
+  Batch 1: largest_intermediate=4194304.0, opt_cost=1119993122.0
+  Batch 2: largest_intermediate=4194304.0, opt_cost=673158156.0
+  Batch 3: largest_intermediate=4194304.0, opt_cost=768583711.0
+  Batch 4: largest_intermediate=8388608.0, opt_cost=1307223963.0
+  Batch 5: largest_intermediate=16777216.0, opt_cost=1957093197.0
+  Batch 6: largest_intermediate=2097152.0, opt_cost=414053604.0
+  Batch 7: largest_intermediate=4194304.0, opt_cost=689040619.0
+  Batch 8: largest_intermediate=8388608.0, opt_cost=1951139646.0
+  Batch 9: largest_intermediate=1048576.0, opt_cost=200604514.0
+  Batch 10: largest_intermediate=8388608.0, opt_cost=1248581715.0
+  Batch 11: largest_intermediate=8388608.0, opt_cost=1374591691.0
+  Batch 12: largest_intermediate=16777216.0, opt_cost=1142500956.0
+  Batch 13: largest_intermediate=4194304.0, opt_cost=577538794.0
+  Batch 14: largest_intermediate=8388608.0, opt_cost=1263330071.0
+  Batch 15: largest_intermediate=16777216.0, opt_cost=2006923349.0
+  Batch 16: largest_intermediate=2097152.0, opt_cost=247483694.0
+  Batch 17: largest_intermediate=1048576.0, opt_cost=174349688.0
+  Batch 18: largest_intermediate=131072.0, opt_cost=14882378.0
+  Batch 19: largest_intermediate=4096.0, opt_cost=687182.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 83.97 GB free / 85.02 GB total (1.05 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 8.2353s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.0564s  gpu=0.0564s  contractions=1  (0.7% of loop)
+  Batch 1: cpu=0.2884s  gpu=0.2883s  contractions=10  (3.5% of loop)
+  Batch 2: cpu=0.2768s  gpu=0.2767s  contractions=10  (3.4% of loop)
+  Batch 3: cpu=0.3956s  gpu=0.3955s  contractions=10  (4.8% of loop)
+  Batch 4: cpu=0.2845s  gpu=0.2844s  contractions=10  (3.5% of loop)
+  Batch 5: cpu=0.3025s  gpu=0.3024s  contractions=10  (3.7% of loop)
+  Batch 6: cpu=0.2857s  gpu=0.2856s  contractions=10  (3.5% of loop)
+  Batch 7: cpu=0.2932s  gpu=0.2931s  contractions=10  (3.6% of loop)
+  Batch 8: cpu=0.2964s  gpu=0.2963s  contractions=10  (3.6% of loop)
+  Batch 9: cpu=0.2895s  gpu=0.2894s  contractions=10  (3.5% of loop)
+  Batch 10: cpu=0.4214s  gpu=0.4213s  contractions=10  (5.1% of loop)
+  Batch 11: cpu=0.3180s  gpu=0.3179s  contractions=10  (3.9% of loop)
+  Batch 12: cpu=0.3140s  gpu=0.3139s  contractions=10  (3.8% of loop)
+  Batch 13: cpu=0.4178s  gpu=0.4177s  contractions=10  (5.1% of loop)
+  Batch 14: cpu=0.3101s  gpu=0.3100s  contractions=10  (3.8% of loop)
+  Batch 15: cpu=0.3194s  gpu=0.3193s  contractions=10  (3.9% of loop)
+  Batch 16: cpu=0.3055s  gpu=0.3054s  contractions=10  (3.7% of loop)
+  Batch 17: cpu=0.4271s  gpu=0.4270s  contractions=10  (5.2% of loop)
+  Batch 18: cpu=0.2983s  gpu=0.2982s  contractions=10  (3.6% of loop)
+  Batch 19: cpu=0.2975s  gpu=0.2974s  contractions=10  (3.6% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0111s (  0.0%)
+  time_circuit_to_einsum        :   0.0592s (  0.0%)
+  time_build_expr_operands      : 288.9128s ( 97.2%)
+  time_contraction_loop         :   8.2353s (  2.8%)
+  time_apply_errors_total       :   1.8958s (  0.6%)
+  time_contract_cpu_total       :   6.1984s (  2.1%)
+  time_contract_gpu_total       :   6.1965s (  2.1%)
+  time_contract_batch_0         :   0.0564s (  0.0%)
+  time_contract_batch_1         :   0.2884s (  0.1%)
+  time_contract_batch_2         :   0.2768s (  0.1%)
+  time_contract_batch_3         :   0.3956s (  0.1%)
+  time_contract_batch_4         :   0.2845s (  0.1%)
+  time_contract_batch_5         :   0.3025s (  0.1%)
+  time_contract_batch_6         :   0.2857s (  0.1%)
+  time_contract_batch_7         :   0.2932s (  0.1%)
+  time_contract_batch_8         :   0.2964s (  0.1%)
+  time_contract_batch_9         :   0.2895s (  0.1%)
+  time_contract_batch_10        :   0.4214s (  0.1%)
+  time_contract_batch_11        :   0.3180s (  0.1%)
+  time_contract_batch_12        :   0.3140s (  0.1%)
+  time_contract_batch_13        :   0.4178s (  0.1%)
+  time_contract_batch_14        :   0.3101s (  0.1%)
+  time_contract_batch_15        :   0.3194s (  0.1%)
+  time_contract_batch_16        :   0.3055s (  0.1%)
+  time_contract_batch_17        :   0.4271s (  0.1%)
+  time_contract_batch_18        :   0.2983s (  0.1%)
+  time_contract_batch_19        :   0.2975s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 191
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 8388608.0
+  opt_cost_batch0               : 1827663347.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.056429985046386716
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.288262336730957
+  num_contractions_batch_1      : 10
+  gpu_contract_batch_2          : 0.27673350334167485
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.3954890537261963
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.2843658885955811
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.3023895359039307
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.2856399345397949
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.2930833930969238
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.2962706241607666
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.2894476509094238
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.42131814765930176
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.3179269752502441
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.31393929672241205
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.41768879318237306
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.31000944137573244
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.3193409309387208
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.3054221420288086
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.42702124214172366
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.2982486057281494
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.29744962882995607
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 8.2353s
+  PTSBE shots/s: 1.21
+  PTSBE unique shots/s: 1.21
+  num_contractions: 191
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:              8.2353s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              1.21 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       1.21 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_7.json[0m
+
+Completed in 301.8s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=8: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 8 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_8 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_8.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_8.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           8
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 8 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0114s
+[TIMING] CircuitToEinsum: 0.0584s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 301.8420s, total operands 0.004 GB
+  Batch 0: largest_intermediate=33554432.0, opt_cost=9482313166.0
+  Batch 1: largest_intermediate=67108864.0, opt_cost=13312181739.0
+  Batch 2: largest_intermediate=134217728.0, opt_cost=29147129233.0
+  Batch 3: largest_intermediate=33554432.0, opt_cost=13581163410.0
+  Batch 4: largest_intermediate=134217728.0, opt_cost=31762058221.0
+  Batch 5: largest_intermediate=134217728.0, opt_cost=17526864664.0
+  Batch 6: largest_intermediate=134217728.0, opt_cost=20209016934.0
+  Batch 7: largest_intermediate=268435456.0, opt_cost=31001621344.0
+  Batch 8: largest_intermediate=268435456.0, opt_cost=48161210442.0
+  Batch 9: largest_intermediate=134217728.0, opt_cost=31247471489.0
+  Batch 10: largest_intermediate=134217728.0, opt_cost=15916461832.0
+  Batch 11: largest_intermediate=268435456.0, opt_cost=32191936179.0
+  Batch 12: largest_intermediate=268435456.0, opt_cost=29149302828.0
+  Batch 13: largest_intermediate=134217728.0, opt_cost=19910487277.0
+  Batch 14: largest_intermediate=33554432.0, opt_cost=3744852653.0
+  Batch 15: largest_intermediate=134217728.0, opt_cost=14286602940.0
+  Batch 16: largest_intermediate=268435456.0, opt_cost=36680898757.0
+  Batch 17: largest_intermediate=16777216.0, opt_cost=1941942741.0
+  Batch 18: largest_intermediate=1048576.0, opt_cost=140843096.0
+  Batch 19: largest_intermediate=16384.0, opt_cost=3808465.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 78.51 GB free / 85.02 GB total (6.51 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 14.1548s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.0720s  gpu=0.0719s  contractions=1  (0.5% of loop)
+  Batch 1: cpu=0.3716s  gpu=0.3715s  contractions=8  (2.6% of loop)
+  Batch 2: cpu=0.5117s  gpu=0.5116s  contractions=10  (3.6% of loop)
+  Batch 3: cpu=0.4407s  gpu=0.4406s  contractions=10  (3.1% of loop)
+  Batch 4: cpu=0.4024s  gpu=0.4023s  contractions=10  (2.8% of loop)
+  Batch 5: cpu=0.4506s  gpu=0.4505s  contractions=10  (3.2% of loop)
+  Batch 6: cpu=0.4856s  gpu=0.4855s  contractions=10  (3.4% of loop)
+  Batch 7: cpu=0.8867s  gpu=0.8866s  contractions=10  (6.3% of loop)
+  Batch 8: cpu=0.9900s  gpu=0.9899s  contractions=10  (7.0% of loop)
+  Batch 9: cpu=0.7235s  gpu=0.7234s  contractions=10  (5.1% of loop)
+  Batch 10: cpu=0.7270s  gpu=0.7269s  contractions=10  (5.1% of loop)
+  Batch 11: cpu=0.6574s  gpu=0.6573s  contractions=10  (4.6% of loop)
+  Batch 12: cpu=0.7959s  gpu=0.7958s  contractions=10  (5.6% of loop)
+  Batch 13: cpu=0.6665s  gpu=0.6664s  contractions=10  (4.7% of loop)
+  Batch 14: cpu=0.4772s  gpu=0.4771s  contractions=10  (3.4% of loop)
+  Batch 15: cpu=0.4462s  gpu=0.4461s  contractions=10  (3.2% of loop)
+  Batch 16: cpu=2.1593s  gpu=2.1592s  contractions=10  (15.3% of loop)
+  Batch 17: cpu=0.4617s  gpu=0.4616s  contractions=10  (3.3% of loop)
+  Batch 18: cpu=0.3015s  gpu=0.3014s  contractions=10  (2.1% of loop)
+  Batch 19: cpu=0.2968s  gpu=0.2967s  contractions=10  (2.1% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0114s (  0.0%)
+  time_circuit_to_einsum        :   0.0584s (  0.0%)
+  time_build_expr_operands      : 301.8420s ( 95.5%)
+  time_contraction_loop         :  14.1548s (  4.5%)
+  time_apply_errors_total       :   1.6620s (  0.5%)
+  time_contract_cpu_total       :  12.3241s (  3.9%)
+  time_contract_gpu_total       :  12.3223s (  3.9%)
+  time_contract_batch_0         :   0.0720s (  0.0%)
+  time_contract_batch_1         :   0.3716s (  0.1%)
+  time_contract_batch_2         :   0.5117s (  0.2%)
+  time_contract_batch_3         :   0.4407s (  0.1%)
+  time_contract_batch_4         :   0.4024s (  0.1%)
+  time_contract_batch_5         :   0.4506s (  0.1%)
+  time_contract_batch_6         :   0.4856s (  0.2%)
+  time_contract_batch_7         :   0.8867s (  0.3%)
+  time_contract_batch_8         :   0.9900s (  0.3%)
+  time_contract_batch_9         :   0.7235s (  0.2%)
+  time_contract_batch_10        :   0.7270s (  0.2%)
+  time_contract_batch_11        :   0.6574s (  0.2%)
+  time_contract_batch_12        :   0.7959s (  0.3%)
+  time_contract_batch_13        :   0.6665s (  0.2%)
+  time_contract_batch_14        :   0.4772s (  0.2%)
+  time_contract_batch_15        :   0.4462s (  0.1%)
+  time_contract_batch_16        :   2.1593s (  0.7%)
+  time_contract_batch_17        :   0.4617s (  0.1%)
+  time_contract_batch_18        :   0.3015s (  0.1%)
+  time_contract_batch_19        :   0.2968s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 189
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 33554432.0
+  opt_cost_batch0               : 9482313166.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.07194131469726563
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.37152310562133795
+  num_contractions_batch_1      : 8
+  gpu_contract_batch_2          : 0.5116109428405762
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.44055974197387693
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.4022968025207519
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.4505243911743164
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.4855346870422364
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.8865879364013672
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.9898569564819335
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.7233630447387696
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.7268534355163574
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.6573164215087891
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.795779083251953
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.6664091033935546
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.47713535308837884
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.4460942687988281
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 2.1592048797607424
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.461569019317627
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.3014156799316406
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.2966741428375244
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 14.1548s
+  PTSBE shots/s: 0.71
+  PTSBE unique shots/s: 0.71
+  num_contractions: 189
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:             14.1548s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              0.71 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       0.71 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_8.json[0m
+
+Completed in 320.7s (returncode=0)
+
+======================================================================
+RUN 1/1 | circuit_id=9: nqubits=200 ngates=1000 ptsbe_nshots=10
+  qubits_per_batch=10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+======================================================================
+Command: /opt/conda/envs/cuquantum/bin/python /workspace/ptsbe/scaling/scaling_comparison_avg.py --num_circuits 1 --nnoise_samples 1 --cudaq_nshots 1 --smart-opt-off both --verbose_level 3 --proportional_sampling --batch_qubit_policy custom --batch_shots_policy uniform --cudaq_timeout 4500 --ptsbe_sample_timeout 50000 --skip_cudaq --nqubits 200 --ngates 1000 --num_hyper_samples 100 --ptsbe_nshots 10 --qubits_per_batch 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10 --circuit_dir /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g --circuit_id 9 --work_dir /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/work_circuit_9 --json_output /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_9.json
+Output: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_9.json
+/opt/conda/envs/cuquantum/lib/python3.11/site-packages/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+SWAPPING GATE ORDER WHEN CONSTRUCTING CIRCUIT BECAUSE QISKIT
+SWAPPING NOISE ORDER FOR TWO-QUBIT NOISE GATES BECAUSE QISKIT
+
+======================================================================
+[1;96mPTSBE vs CUDA-Q COMPARISON (AVERAGED)[0m
+======================================================================
+
+[1;92mConfiguration:[0m
+  num_circuits:         1
+  nqubits:              200
+  ngates:               1000
+  cudaq_nshots:         1
+  ptsbe_nshots:         10
+  final_nshots:         100 (PTSBE last batch)
+  batch_shots_policy:   uniform, shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  batch_qubit_policy:   custom, qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  first_fixed:          10
+  max_free_qubits:      10
+  num_fixed:            190 -> 2^190 = 1569275433846670190958947355801916604025588861116008628224 combinations
+  nnoise_samples:       1
+  prob_range:           [0.02, 0.2]
+  proportion_two_qubit: 0.2
+  local_gates:          False
+  smart_opt_off:        both
+  num_hyper_samples:    100
+  no_count_degenerate_shots: False
+  circuit_dir:          /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  circuit_id:           9
+======================================================================
+
+
+######################################################################
+#################### CIRCUIT 1 / 1 ####################
+######################################################################
+
+[1;92m[PHASE 1] Loading shared circuit...[0m
+  Loaded circuit 9 from /workspace/ptsbe/scaling/data_collection/circuits/200q_1000g
+  Circuit loaded in 0.0003s
+[GPU MEM] After CUDA-Q cleanup: 84.46 GB free / 85.02 GB total (0.55 GB in use)
+
+[1;92m[PHASE 3] Running PTSBE...[0m
+  Loaded 1 noise samples
+  .............................................................
+** Contraction Estimate (Batched, qubitShotFlex) **
+  Qubits: 200, max_free: 10
+  Batches: 20, ranges: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], qubits_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Samples: 1, base_shots_per_batch: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10], proportional_sampling: True
+  Minimum contractions:  20 in total for 1 samples
+  Expected contractions: 172 in total for 1 samples
+  Maximum contractions:  191 in total for 1 samples
+  .............................................................
+[1;91m[WARNING] shots_per_batch is ignored when proportional_sampling=True.[0m
+[1;91m[WARNING] Set proportional_sampling=False to use shots_per_batch.[0m
+[TIMING] Load circuit: 0.0113s
+[TIMING] CircuitToEinsum: 0.0568s
+[INFO] Batched approach (qubitShotFlex): 20 batches, ranges=[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200], base_shots_per_batch=[10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+  Batch 0 operands: 2400 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 1 operands: 2420 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 2 operands: 2440 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 3 operands: 2460 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 4 operands: 2480 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 5 operands: 2500 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 6 operands: 2520 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 7 operands: 2540 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 8 operands: 2560 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 9 operands: 2580 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 10 operands: 2600 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 11 operands: 2620 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 12 operands: 2640 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 13 operands: 2660 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 14 operands: 2680 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 15 operands: 2700 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 16 operands: 2720 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 17 operands: 2740 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 18 operands: 2760 tensors, 0.000 GB total, largest single tensor 0.00 MB
+  Batch 19 operands: 2780 tensors, 0.000 GB total, largest single tensor 0.00 MB
+[TIMING] Build expr/operands (20 batches): 305.3621s, total operands 0.004 GB
+  Batch 0: largest_intermediate=4194304.0, opt_cost=796482819.0
+  Batch 1: largest_intermediate=16777216.0, opt_cost=2024507580.0
+  Batch 2: largest_intermediate=16777216.0, opt_cost=2689511010.0
+  Batch 3: largest_intermediate=4194304.0, opt_cost=791376121.0
+  Batch 4: largest_intermediate=8388608.0, opt_cost=1339451176.0
+  Batch 5: largest_intermediate=4194304.0, opt_cost=1683730890.0
+  Batch 6: largest_intermediate=16777216.0, opt_cost=2880785997.0
+  Batch 7: largest_intermediate=8388608.0, opt_cost=2585742805.0
+  Batch 8: largest_intermediate=8388608.0, opt_cost=1466493536.0
+  Batch 9: largest_intermediate=4194304.0, opt_cost=723479277.0
+  Batch 10: largest_intermediate=4194304.0, opt_cost=880937908.0
+  Batch 11: largest_intermediate=2097152.0, opt_cost=473808166.0
+  Batch 12: largest_intermediate=8388608.0, opt_cost=1702959861.0
+  Batch 13: largest_intermediate=8388608.0, opt_cost=809874341.0
+  Batch 14: largest_intermediate=4194304.0, opt_cost=707991829.0
+  Batch 15: largest_intermediate=16777216.0, opt_cost=2501872820.0
+  Batch 16: largest_intermediate=8388608.0, opt_cost=886609058.0
+  Batch 17: largest_intermediate=4194304.0, opt_cost=550679760.0
+  Batch 18: largest_intermediate=262144.0, opt_cost=44498187.0
+  Batch 19: largest_intermediate=4096.0, opt_cost=1024682.0
+[GPU MEM] Before contraction loop: 84.28 GB free / 85.02 GB total (0.73 GB in use)
+[TIMING] Starting contractions: 1 samples × 20 batches = 20
+  [GPU MEM] After batch 0 pool cleanup: 84.22 GB free / 85.02 GB total (0.80 GB in use)
+  [GPU MEM] After batch 1 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 2 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 3 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 4 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 5 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 6 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 7 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 8 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 9 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 10 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 11 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 12 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 13 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 14 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 15 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 16 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 17 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 18 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  [GPU MEM] After batch 19 pool cleanup: 83.64 GB free / 85.02 GB total (1.38 GB in use)
+  Progress: 1/1 samples
+[TIMING] Contraction loop total: 8.1687s
+
+[TIMING] Per-batch contraction breakdown (20 batches, summed across 1 samples):
+  Batch 0: cpu=0.0567s  gpu=0.0566s  contractions=1  (0.7% of loop)
+  Batch 1: cpu=0.1822s  gpu=0.1821s  contractions=6  (2.2% of loop)
+  Batch 2: cpu=0.3058s  gpu=0.3057s  contractions=10  (3.7% of loop)
+  Batch 3: cpu=0.2818s  gpu=0.2817s  contractions=10  (3.4% of loop)
+  Batch 4: cpu=0.2866s  gpu=0.2865s  contractions=10  (3.5% of loop)
+  Batch 5: cpu=0.2946s  gpu=0.2945s  contractions=10  (3.6% of loop)
+  Batch 6: cpu=0.3091s  gpu=0.3090s  contractions=10  (3.8% of loop)
+  Batch 7: cpu=0.4405s  gpu=0.4404s  contractions=10  (5.4% of loop)
+  Batch 8: cpu=0.3012s  gpu=0.3011s  contractions=10  (3.7% of loop)
+  Batch 9: cpu=0.2939s  gpu=0.2938s  contractions=10  (3.6% of loop)
+  Batch 10: cpu=0.4142s  gpu=0.4141s  contractions=10  (5.1% of loop)
+  Batch 11: cpu=0.3016s  gpu=0.3015s  contractions=10  (3.7% of loop)
+  Batch 12: cpu=0.3012s  gpu=0.3011s  contractions=10  (3.7% of loop)
+  Batch 13: cpu=0.3031s  gpu=0.3030s  contractions=10  (3.7% of loop)
+  Batch 14: cpu=0.4409s  gpu=0.4408s  contractions=10  (5.4% of loop)
+  Batch 15: cpu=0.3548s  gpu=0.3547s  contractions=10  (4.3% of loop)
+  Batch 16: cpu=0.3273s  gpu=0.3272s  contractions=10  (4.0% of loop)
+  Batch 17: cpu=0.3046s  gpu=0.3045s  contractions=10  (3.7% of loop)
+  Batch 18: cpu=0.2974s  gpu=0.2973s  contractions=10  (3.6% of loop)
+  Batch 19: cpu=0.2949s  gpu=0.2948s  contractions=10  (3.6% of loop)
+
+==================================================
+PROFILING SUMMARY (BATCHED qubitShotFlex)
+==================================================
+  time_load_circuit             :   0.0113s (  0.0%)
+  time_circuit_to_einsum        :   0.0568s (  0.0%)
+  time_build_expr_operands      : 305.3621s ( 97.4%)
+  time_contraction_loop         :   8.1687s (  2.6%)
+  time_apply_errors_total       :   1.9375s (  0.6%)
+  time_contract_cpu_total       :   6.0925s (  1.9%)
+  time_contract_gpu_total       :   6.0906s (  1.9%)
+  time_contract_batch_0         :   0.0567s (  0.0%)
+  time_contract_batch_1         :   0.1822s (  0.1%)
+  time_contract_batch_2         :   0.3058s (  0.1%)
+  time_contract_batch_3         :   0.2818s (  0.1%)
+  time_contract_batch_4         :   0.2866s (  0.1%)
+  time_contract_batch_5         :   0.2946s (  0.1%)
+  time_contract_batch_6         :   0.3091s (  0.1%)
+  time_contract_batch_7         :   0.4405s (  0.1%)
+  time_contract_batch_8         :   0.3012s (  0.1%)
+  time_contract_batch_9         :   0.2939s (  0.1%)
+  time_contract_batch_10        :   0.4142s (  0.1%)
+  time_contract_batch_11        :   0.3016s (  0.1%)
+  time_contract_batch_12        :   0.3012s (  0.1%)
+  time_contract_batch_13        :   0.3031s (  0.1%)
+  time_contract_batch_14        :   0.4409s (  0.1%)
+  time_contract_batch_15        :   0.3548s (  0.1%)
+  time_contract_batch_16        :   0.3273s (  0.1%)
+  time_contract_batch_17        :   0.3046s (  0.1%)
+  time_contract_batch_18        :   0.2974s (  0.1%)
+  time_contract_batch_19        :   0.2949s (  0.1%)
+  num_noise_samples             : 1
+  num_batches                   : 20
+  num_contractions              : 187
+  num_qubits                    : 200
+  max_free_qubits               : 10
+  nshots                        : 10
+  largest_intermediate_batch0   : 4194304.0
+  opt_cost_batch0               : 796482819.0
+  num_timed_out_samples         : 0
+  oom_error                     : False
+  gpu_contract_batch_0          : 0.05664259338378906
+  num_contractions_batch_0      : 1
+  gpu_contract_batch_1          : 0.18213936042785644
+  num_contractions_batch_1      : 6
+  gpu_contract_batch_2          : 0.3056648292541504
+  num_contractions_batch_2      : 10
+  gpu_contract_batch_3          : 0.2817180480957031
+  num_contractions_batch_3      : 10
+  gpu_contract_batch_4          : 0.2864984626770019
+  num_contractions_batch_4      : 10
+  gpu_contract_batch_5          : 0.29445484733581545
+  num_contractions_batch_5      : 10
+  gpu_contract_batch_6          : 0.3089690265655518
+  num_contractions_batch_6      : 10
+  gpu_contract_batch_7          : 0.4404000568389892
+  num_contractions_batch_7      : 10
+  gpu_contract_batch_8          : 0.30110751914978023
+  num_contractions_batch_8      : 10
+  gpu_contract_batch_9          : 0.2938419532775879
+  num_contractions_batch_9      : 10
+  gpu_contract_batch_10         : 0.41408550262451177
+  num_contractions_batch_10     : 10
+  gpu_contract_batch_11         : 0.3015479393005371
+  num_contractions_batch_11     : 10
+  gpu_contract_batch_12         : 0.30111599922180177
+  num_contractions_batch_12     : 10
+  gpu_contract_batch_13         : 0.3030458221435547
+  num_contractions_batch_13     : 10
+  gpu_contract_batch_14         : 0.4407632637023926
+  num_contractions_batch_14     : 10
+  gpu_contract_batch_15         : 0.35467049407958984
+  num_contractions_batch_15     : 10
+  gpu_contract_batch_16         : 0.3272299461364746
+  num_contractions_batch_16     : 10
+  gpu_contract_batch_17         : 0.30454716873168947
+  num_contractions_batch_17     : 10
+  gpu_contract_batch_18         : 0.2973317737579345
+  num_contractions_batch_18     : 10
+  gpu_contract_batch_19         : 0.29482793617248537
+  num_contractions_batch_19     : 10
+==================================================
+
+
+[1;92mPTSBE Results:[0m
+  Total number of distinct PTSBE shots collected:       10
+  Total number of overall PTSBE shots collected:          10
+  Total number of distinct PTSBE pieces of labeled training data collected:     10
+
+[1;92mCircuit 1 Summary:[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  PTSBE total: 8.1687s
+  PTSBE shots/s: 1.22
+  PTSBE unique shots/s: 1.22
+  num_contractions: 187
+
+======================================================================
+[1;96mAVERAGED RESULTS (N=1 circuits)[0m
+======================================================================
+
+[1;92mTiming Comparison (Averaged) (Note this makes sense only when proportional_sampling = true and nnoise_samples = 1):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q total:             0.0000s +/- 0.0000s
+  PTSBE total:              8.1687s +/- 0.0000s
+  ─────────────────────────────────
+  [1;91mSPEEDUP:                    0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mThroughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q shots/s:             0.00 +/- 0.00
+  PTSBE shots/s:              1.22 +/- 0.00
+  ─────────────────────────────────
+  [1;91mTHROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+[1;92mUnique Throughput Comparison (Averaged):[0m (CUDA-Q: sample time; PTSBE: contraction loop only.)
+  CUDA-Q unique shots/s:       0.00 +/- 0.00
+  PTSBE unique shots/s:       1.22 +/- 0.00
+  ─────────────────────────────────
+  [1;91mUNIQUE THROUGHPUT ADVANTAGE:       0.00x +/- 0.00x (CUDA-Q faster)[0m
+
+======================================================================
+
+[1;92mResults saved to: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/run_1_circuit_9.json[0m
+
+Completed in 318.2s (returncode=0)
+
+Combined results: /workspace/ptsbe/scaling/data_collection/figure_04_panel_b_proportional_speedup/200q_1000g/python/output_data_collection_1/benchmark_combined.json
+
+====================================================================================================
+PROPORTIONAL SAMPLING 3 SUMMARY
+====================================================================================================
+ Run |   nq |   ng |  nshots |   ptsbe_time | contractions | throughput_adv
+----------------------------------------------------------------------------------------------------
+   1 |  200 | 1000 |      10 |      278.73s |          187 |           None
+   1 |  200 | 1000 |      10 |      382.65s |          191 |           None
+   1 |  200 | 1000 |      10 |      329.27s |          189 |           None
+   1 |  200 | 1000 |      10 |      278.67s |          191 |           None
+   1 |  200 | 1000 |      10 |      362.69s |          189 |           None
+   1 |  200 | 1000 |      10 |      419.50s |           61 |           None
+   1 |  200 | 1000 |      10 |      299.94s |          191 |           None
+   1 |  200 | 1000 |      10 |      297.40s |          191 |           None
+   1 |  200 | 1000 |      10 |      316.28s |          189 |           None
+   1 |  200 | 1000 |      10 |      313.81s |          187 |           None
+====================================================================================================
+
+[internal container cleanup output removed]
